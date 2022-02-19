@@ -92,10 +92,18 @@
         <!-- Brightness slider styles -->
 	<com.tenx.support.preferences.TenXPreference
 	    android:key="android.theme.customization.brightness_slider"
-	    tenx:position="bottom"
+	    tenx:position="middle"
             android:title="@string/theme_customization_brightness_slider_title"
             android:summary="@string/theme_customization_brightness_slider_summary"
             android:fragment="com.tenx.settings.fragments.theme.BrightnessSlider"/>
+
+        <!-- Navbar Style -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="android.theme.customization.navbar"
+            tenx:position="bottom"
+            android:title="@string/theme_customization_navbar_title"
+            android:summary="@string/theme_customization_navbar_summary"
+            android:fragment="com.tenx.settings.fragments.theme.NavbarStyles"/>
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 

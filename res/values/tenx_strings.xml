@@ -982,4 +982,8 @@
     <!-- Ignore secure window -->
     <string name="ignore_window_secure_title">Ignore window secure flags</string>
     <string name="ignore_window_secure_summary">Fixes black screenshots and recordings, May lead to privacy leaks, Restart apps to apply changes</string>
+
+    <!-- Navbar styles -->
+    <string name="theme_customization_navbar_title">Navbar style</string>
+    <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
 </resources>
