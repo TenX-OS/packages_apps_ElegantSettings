@@ -50,6 +50,14 @@
             android:fragment="com.tenx.settings.fragments.Buttons"
             android:icon="@drawable/ic_settings_buttons"/>
 
+        <!-- Dashboard -->
+        <Preference
+            android:key="dashboard_category"
+            android:title="@string/dashboard_title"
+            android:summary="@string/dashboard_summary"
+            android:fragment="com.tenx.settings.fragments.Dashboard"
+            android:icon="@drawable/ic_dashboard"/>
+
         <!-- Gestures -->
         <Preference
             android:key="gesture_settings"

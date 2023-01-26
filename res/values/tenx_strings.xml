@@ -46,5 +46,7 @@
     <string name="ambient_display_custom_summary">Xtend my ambient display</string>
     <string name="system_settings_title">System</string>
     <string name="system_settings_summary">Xtend my system settings</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_summary">Dashboard customisations</string>
 
 </resources>
