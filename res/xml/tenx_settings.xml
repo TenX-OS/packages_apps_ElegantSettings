@@ -24,7 +24,7 @@
             android:title="@string/tenx_title"
             android:summary="@string/tenx_summary"
             android:fragment="com.tenx.settings.fragments.UserInterface" 
-            android:icon="@drawable/ic_settings_tenx"/>
+            android:icon="@drawable/ic_settings_user_interface"/>
 
         <!-- Status Bar -->
         <Preference
