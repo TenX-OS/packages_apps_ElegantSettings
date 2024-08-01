@@ -21,103 +21,152 @@
         <!-- User Interface -->
         <Preference
             android:key="ui_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/tenx_title"
             android:summary="@string/tenx_summary"
             android:fragment="com.tenx.settings.fragments.UserInterface" 
             android:icon="@drawable/ic_settings_user_interface"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Status Bar -->
         <Preference
             android:key="statusbar_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/statusbar_title"
             android:summary="@string/statusbar_summary"
             android:fragment="com.tenx.settings.fragments.StatusBar" 
             android:icon="@drawable/ic_settings_statusbar"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Quick Settings -->
         <Preference
             android:key="quicksettings_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/quicksettings_title"
             android:summary="@string/quicksettings_summary"
             android:fragment="com.tenx.settings.fragments.QuickSettings"
             android:icon="@drawable/ic_settings_quicksettings"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Buttons -->
         <Preference
             android:key="buttons_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/buttons_title"
             android:summary="@string/buttons_summary"
             android:fragment="com.tenx.settings.fragments.Buttons"
             android:icon="@drawable/ic_settings_buttons"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Dashboard -->
         <Preference
             android:key="dashboard_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/dashboard_title"
             android:summary="@string/dashboard_summary"
             android:fragment="com.tenx.settings.fragments.Dashboard"
             android:icon="@drawable/ic_dashboard"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Gestures -->
         <Preference
             android:key="gesture_settings"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/gesture_preference_title"
             android:summary="@string/gestures_summary"
             android:icon="@drawable/ic_settings_gest"
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- System -->
         <Preference
             android:key="system_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/system_settings_title"
             android:summary="@string/system_settings_summary"
             android:fragment="com.tenx.settings.fragments.System"
             android:icon="@drawable/ic_settings_system" />
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Lock Screen -->
         <Preference
             android:key="lockscreen_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/lockscreen_title"
             android:summary="@string/lockscreen_summary"
             android:fragment="com.tenx.settings.fragments.LockScreen"
             android:icon="@drawable/ic_settings_lockscreen"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Notifications -->
         <Preference
             android:key="notifications_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/notifications_title"
             android:summary="@string/notifications_summary"
             android:fragment="com.tenx.settings.fragments.Notifications"
             android:icon="@drawable/ic_settings_notifications"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Nav bar -->
         <Preference
             android:key="navbar_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/navigation_title"
             android:summary="@string/navigation_summary"
             android:fragment="com.tenx.settings.fragments.Navigation"
             android:icon="@drawable/ic_settings_navbar" />
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Battery Saving -->
         <Preference
             android:key="battery_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/battery_title"
             android:summary="@string/battery_saving_summary"
             android:fragment="com.tenx.settings.fragments.Battery"
             android:icon="@drawable/ic_settings_battery"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Animation -->
         <Preference
             android:key="animations_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/animations_title"
             android:summary="@string/animations_summary"
             android:fragment="com.tenx.settings.fragments.Animations"
             android:icon="@drawable/ic_settings_animations"/>
 
+        <com.android.settingslib.widget.LayoutPreference
+            android:layout="@layout/tenx_settings_divider" />
+
         <!-- Misc -->
         <Preference
             android:key="misc_category"
+            settings:layout="@layout/tenx_settings_card_layout"
             android:title="@string/misc_title"
             android:summary="@string/misc_summary"
             android:fragment="com.tenx.settings.fragments.Misc"
