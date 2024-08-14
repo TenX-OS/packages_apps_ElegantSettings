@@ -37,6 +37,20 @@
             android:summary="@string/theme_customization_font_summary"
             android:fragment="com.tenx.settings.fragments.theme.FontsPicker"/>
 
+        <!-- Signal icon style -->
+        <Preference
+            android:key="android.theme.customization.signal_icon"
+            android:title="@string/theme_customization_signal_icon_title"
+            android:summary="@string/theme_customization_signal_icon_summary"
+            android:fragment="com.tenx.settings.fragments.theme.SignalIcons"/>
+
+        <!-- Wifi icon style -->
+        <Preference
+            android:key="android.theme.customization.wifi_icon"
+            android:title="@string/theme_customization_wifi_icon_title"
+            android:summary="@string/theme_customization_wifi_icon_summary"
+            android:fragment="com.tenx.settings.fragments.theme.WifiIcons"/>
+
         <!-- LockClockFonts style -->
         <Preference
             android:key="android.theme.customization.lockscreen_clock_font"
