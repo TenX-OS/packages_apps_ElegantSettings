@@ -33,47 +33,15 @@ public class UserInterface extends SettingsPreferenceFragment
 
     public static final String TAG = "UserInterface";
 
-    private static final String KEY_MONET = "monet_settings";
-    private static final String KEY_ICON_PACK = "android.theme.customization.icon_pack";
-    private static final String KEY_ADAPTIVE_ICON_PACK = "android.theme.customization.adaptive_icon_shape";
-    private static final String KEY_SYSTEM_FONT = "android.theme.customization.fonts";
-    private static final String KEY_SIGNAL_ICONS = "android.theme.customization.signal_icon";
-    private static final String KEY_WIFI_ICONS = "android.theme.customization.wifi_icon";
-
-    private Preference mMonet;
-    private Preference mIconPack;
-    private Preference mAdaptiveIconPack;
-    private Preference mSystemFont;
-    private Preference mSignalIcons;
-    private Preference mWiFiIcons;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.tenx_settings_ui);
-
-        mMonet = (Preference) findPreference(KEY_MONET);
-        mIconPack = (Preference) findPreference(KEY_ICON_PACK);
-        mAdaptiveIconPack = (Preference) findPreference(KEY_ADAPTIVE_ICON_PACK);
-        mSystemFont = (Preference) findPreference(KEY_SYSTEM_FONT);
-        mSignalIcons = (Preference) findPreference(KEY_SIGNAL_ICONS);
-        mWiFiIcons = (Preference) findPreference(KEY_WIFI_ICONS);
-
-        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
-    }
-
-    private void setLayoutToPreference() {
-        mMonet.setLayoutResource(R.layout.tenx_preference_top);
-        mIconPack.setLayoutResource(R.layout.tenx_preference_middle);
-        mAdaptiveIconPack.setLayoutResource(R.layout.tenx_preference_middle);
-        mSystemFont.setLayoutResource(R.layout.tenx_preference_middle);
-        mSignalIcons.setLayoutResource(R.layout.tenx_preference_middle);
-        mWiFiIcons.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     @Override

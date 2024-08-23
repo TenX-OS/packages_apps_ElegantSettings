@@ -29,6 +29,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
+import com.tenx.support.preferences.TenXPreference;
 
 public class Misc extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -36,10 +37,8 @@ public class Misc extends SettingsPreferenceFragment
     public static final String TAG = "Misc";
 
     private static final String KEY_POCKET_JUDGE = "pocket_judge";
-    private static final String KEY_DEV_SETTINGS = "hide_developer_status_settings";
 
     private SystemSettingSwitchPreference mPocketJudge;
-    private Preference mDeveloperSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,14 +49,11 @@ public class Misc extends SettingsPreferenceFragment
         final Resources res = getResources();
 
         mPocketJudge = (SystemSettingSwitchPreference) findPreference(KEY_POCKET_JUDGE);
-        mDeveloperSettings = (Preference) findPreference(KEY_DEV_SETTINGS);
 
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);
         if (!mPocketJudgeSupported)
             prefScreen.removePreference(mPocketJudge);
-
-        mDeveloperSettings.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     @Override

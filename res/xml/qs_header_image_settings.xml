@@ -42,8 +42,9 @@
         android:persistent="false"
         android:dependency="status_bar_custom_header" />
 
-    <Preference
+    <com.tenx.support.preferences.TenXPreference
         android:key="custom_header_browse"
+        tenx:position="middle"
         android:title="@string/qs_header_browse_title"
         android:summary="@string/qs_header_browse_summary"
         android:persistent="false"
@@ -51,15 +52,16 @@
         <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="org.omnirom.omnistyle"
                 android:targetClass="org.omnirom.omnistyle.PickHeaderActivity" />
-        </Preference>
+    </com.tenx.support.preferences.TenXPreference>
 
-    <Preference
+    <com.tenx.support.preferences.TenXPreference
         android:key="file_header_select"
+        tenx:position="middle"
         android:title="@string/qs_header_file_select_title"
         android:summary="@string/qs_header_file_select_summary"
         android:persistent="false"
         android:dependency="status_bar_custom_header" >
-    </Preference>
+    </com.tenx.support.preferences.TenXPreference>
 
     <com.tenx.support.preferences.SystemSettingSeekBarPreference
         android:key="status_bar_custom_header_height"

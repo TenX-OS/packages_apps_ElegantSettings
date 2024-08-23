@@ -43,13 +43,9 @@ import com.tenx.support.colorpicker.ColorPickerPreference;
 public class StatusBar extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_STATUS_BAR_ICONS = "status_bar_icons";
-    private static final String KEY_NETWORK_TRAFFIC = "network_traffic_settings";
-    private static final String KEY_BATTERY_BAR = "batterybar";
     private static final String KEY_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
-    private static final String KEY_CLOCK = "clock";
     private static final String LOGO_COLOR = "status_bar_logo_color";
     private static final String LOGO_COLOR_PICKER = "status_bar_logo_color_picker";
     private static final String KEY_QUICK_PULLDOWN = "qs_quick_pulldown";
@@ -62,13 +58,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final int PULLDOWN_DIR_LEFT = 2;
     private static final int PULLDOWN_DIR_BOTH = 3;
 
-    private Preference mStatusbarIcons;
-    private Preference mNetworkTraffic;
-    private Preference mBatteryBar;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingSwitchPreference mBatteryTextCharging;
-    private Preference mClock;
     private SystemSettingListPreference mLogoColor;
     private ColorPickerPreference mLogoColorPicker;
     private LineageSystemSettingListPreference mQuickPulldown;
@@ -82,13 +74,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
         final Context context = getContext();
         final ContentResolver resolver = context.getContentResolver();
 
-        mStatusbarIcons = (Preference) findPreference(KEY_STATUS_BAR_ICONS);
-        mNetworkTraffic = (Preference) findPreference(KEY_NETWORK_TRAFFIC);
-        mBatteryBar = (Preference) findPreference(KEY_BATTERY_BAR);
         mBatteryStyle = (SystemSettingListPreference) findPreference(KEY_BATTERY_STYLE);
         mBatteryPercent = (SystemSettingListPreference) findPreference(KEY_BATTERY_PERCENT);
         mBatteryTextCharging = (SystemSettingSwitchPreference) findPreference(KEY_BATTERY_TEXT_CHARGING);
-        mClock = (Preference) findPreference(KEY_CLOCK);
 
         int batterystyle = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -134,8 +122,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mLogoColorPicker.setOnPreferenceChangeListener(this);
 
         updateColorPrefs(logoColor);
-
-        setLayoutToPreference();
     }
 
     @Override
@@ -210,13 +196,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 break;
         }
         mQuickPulldown.setSummary(summary);
-    }
-
-    private void setLayoutToPreference() {
-        mStatusbarIcons.setLayoutResource(R.layout.tenx_preference_top);
-        mNetworkTraffic.setLayoutResource(R.layout.tenx_preference_middle);
-        mBatteryBar.setLayoutResource(R.layout.tenx_preference_middle);
-        mClock.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     private void updateColorPrefs(int logoColor) {

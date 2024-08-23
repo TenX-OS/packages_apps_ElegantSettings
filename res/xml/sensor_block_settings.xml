@@ -24,7 +24,7 @@
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="sensor_block"
         android:title="@string/sensor_block_title"
-        tenx:position="full"
+        tenx:position="top"
         android:summary="@string/sensor_block_summary"
         android:defaultValue="false" />
 
@@ -37,8 +37,9 @@
         android:key="sensor_block_applications">
 
         <!-- Sensor block per app -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="add_sensor_block_packages"
+            tenx:position="bottom"
             android:title="@string/add_sensor_block_package_title" />
 
     </com.tenx.support.preferences.TenXPreferenceCategory>

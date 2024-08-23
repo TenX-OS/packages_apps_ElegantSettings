@@ -40,8 +40,9 @@
             android:defaultValue="false"/>
 
         <!-- Hide developer status -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="hide_developer_status_settings"
+            tenx:position="middle"
             android:title="@string/hide_developer_status_title"
             android:summary="@string/hide_developer_status_summary"
             android:fragment="com.tenx.settings.fragments.HideDeveloperStatusSettings" />

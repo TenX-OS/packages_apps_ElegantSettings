@@ -61,15 +61,12 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     private static final String HEADER_SHADOW = "status_bar_custom_header_shadow";
     private static final int REQUEST_PICK_IMAGE = 0;
 
-    private SystemSettingSwitchPreference mEnable;
     private Preference mHeaderBrowse;
     private ListPreference mDaylightHeaderPack;
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
     private Preference mFileHeader;
     private String mFileHeaderProvider;
-    private SystemSettingSeekBarPreference mHeight;
-    private SystemSettingSeekBarPreference mShadow;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -79,9 +76,6 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mEnable = (SystemSettingSwitchPreference) findPreference(ENABLE_HEADER);
-        mHeight = (SystemSettingSeekBarPreference) findPreference(HEADER_HEIGHT);
-        mShadow = (SystemSettingSeekBarPreference) findPreference(HEADER_SHADOW);
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
 
@@ -113,8 +107,6 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
 
         mFileHeader = findPreference(FILE_HEADER_SELECT);
         mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
-
-        setLayoutToPreference();
     }
 
     private void updateHeaderProviderSummary() {
@@ -220,13 +212,6 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_HEIGHT, 142, UserHandle.USER_CURRENT);
-    }
-
-    private void setLayoutToPreference() {
-        mHeaderBrowse.setLayoutResource(R.layout.tenx_preference_middle);
-        mDaylightHeaderPack.setLayoutResource(R.layout.tenx_preference_middle);
-        mHeaderProvider.setLayoutResource(R.layout.tenx_preference_middle);
-        mFileHeader.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     @Override

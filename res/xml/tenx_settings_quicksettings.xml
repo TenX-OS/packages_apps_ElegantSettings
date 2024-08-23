@@ -53,8 +53,9 @@
         android:title="@string/header_category_title">
 
         <!-- QS headers -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="category_custom_header"
+            tenx:position="full"
             android:fragment="com.tenx.settings.fragments.qs.QsHeaderImageSettings"
             android:title="@string/qs_header_image_title"
             android:summary="@string/qs_header_image_summary" />

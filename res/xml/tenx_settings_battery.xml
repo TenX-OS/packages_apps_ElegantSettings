@@ -39,15 +39,17 @@
         android:title="@string/saver_category_title">
 
         <!-- Sensor block per package -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="sensor_block_settings"
+            tenx:position="top"
             android:title="@string/sensor_block_title"
             android:summary="@string/sensor_block_summary"
             android:fragment="com.tenx.settings.fragments.battery.SensorBlock" />
 
         <!-- Smart pixels -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="smart_pixels"
+            tenx:position="bottom"
             android:title="@string/smart_pixels_title" 
             android:summary="@string/smart_pixels_summary" 
             android:fragment="com.tenx.settings.fragments.battery.SmartPixels" />

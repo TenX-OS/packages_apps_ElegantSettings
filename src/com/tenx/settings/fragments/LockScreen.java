@@ -37,25 +37,23 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.tenx.settings.fragments.lockscreen.UdfpsAnimation;
 import com.tenx.settings.fragments.lockscreen.UdfpsIconPicker;
 
+import com.tenx.support.preferences.SecureSettingSwitchPreference;
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
+import com.tenx.support.preferences.TenXPreference;
 
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_CLOCK_FONT = "android.theme.customization.lockscreen_clock_font";
-    private static final String KEY_WEATHER_PREFERENCE = "weather_preference";
     private static final String KEY_WEATHER_ENABLED = "lockscreen_weather_enabled";
     private static final String KEY_UDFPS_ANIMATIONS = "udfps_recognizing_animation_preview";
     private static final String KEY_UDFPS_ICONS = "udfps_icon_picker";
     private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
     private static final String KEY_FINGERPRINT_CATEGORY = "fingerprint";
 
-    private Preference mClockFont;
-    private Preference mWeatherPreference;
     private SystemSettingSwitchPreference mWeatherEnabled;
-    private Preference mUdfpsAnimations;
-    private Preference mUdfpsIcons;
-    private Preference mScreenOffUdfps;
+    private TenXPreference mUdfpsAnimations;
+    private TenXPreference mUdfpsIcons;
+    private SecureSettingSwitchPreference mScreenOffUdfps;
 
     private OmniJawsClient mWeatherClient;
 
@@ -71,12 +69,10 @@ public class LockScreen extends SettingsPreferenceFragment implements
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
 
-        mClockFont = (Preference) findPreference(KEY_CLOCK_FONT);
-        mWeatherPreference = (Preference) findPreference(KEY_WEATHER_PREFERENCE);
         mWeatherEnabled = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_ENABLED);
-        mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
-        mUdfpsIcons = (Preference) findPreference(KEY_UDFPS_ICONS);
-        mScreenOffUdfps = (Preference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
+        mUdfpsAnimations = (TenXPreference) findPreference(KEY_UDFPS_ANIMATIONS);
+        mUdfpsIcons = (TenXPreference) findPreference(KEY_UDFPS_ICONS);
+        mScreenOffUdfps = (SecureSettingSwitchPreference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             fingerprintCategory.removePreference(mUdfpsAnimations);
@@ -99,27 +95,10 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
-
-        setLayoutToPreference();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
-    }
-
-    private void setLayoutToPreference() {
-    boolean screenOffUdfpsAvailable = getContext().getResources().getBoolean(
-        com.android.internal.R.bool.config_supportScreenOffUdfps) ||
-        !TextUtils.isEmpty(getContext().getResources().getString(
-            com.android.internal.R.string.config_dozeUdfpsLongPressSensorType));
-
-        mClockFont.setLayoutResource(R.layout.tenx_preference);
-        mWeatherPreference.setLayoutResource(R.layout.tenx_preference_top);
-
-        if (screenOffUdfpsAvailable) {
-            mUdfpsAnimations.setLayoutResource(R.layout.tenx_preference_middle);
-            mUdfpsIcons.setLayoutResource(R.layout.tenx_preference_middle);
-        }
     }
 
     private void updateWeatherSettings() {

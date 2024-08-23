@@ -65,15 +65,16 @@
         android:title="@string/lockscreen_weather_category_title">
 
         <!-- Weather preference -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="weather_preference"
+            tenx:position="top"
             android:title="@string/weather_settings_title"
             android:summary="@string/weather_settings_summary">
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="org.omnirom.omnijaws"
                 android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
-        </Preference>
+        </com.tenx.support.preferences.TenXPreference>
 
         <!-- Lockscreen weather enabled -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
@@ -150,15 +151,17 @@
             android:defaultValue="true" />
 
         <!-- UDFPS icon picker -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="udfps_icon_picker"
+            tenx:position="middle"
             android:title="@string/udfps_icon_picker_title"
             android:summary="@string/udfps_icon_picker_summary"
             android:fragment="com.tenx.settings.fragments.lockscreen.UdfpsIconPicker" />
 
         <!-- UDFPS animations picker -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="udfps_recognizing_animation_preview"
+            tenx:position="middle"
             android:title="@string/udfps_recog_animation_effect_title"
             android:summary="@string/udfps_recog_animation_effect_summary"
             android:fragment="com.tenx.settings.fragments.lockscreen.UdfpsAnimation" />

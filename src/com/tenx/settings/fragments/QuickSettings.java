@@ -43,7 +43,6 @@ public class QuickSettings extends SettingsPreferenceFragment
 
     private static final String KEY_BATTERY_STYLE = "qs_battery_style";
     private static final String KEY_BATTERY_PERCENT = "qs_show_battery_percent";
-    private static final String KEY_HEADER_IMAGE = "category_custom_header";
     private static final String KEY_QS_UI_STYLE  = "qs_tile_ui_style";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
@@ -52,7 +51,6 @@ public class QuickSettings extends SettingsPreferenceFragment
 
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingListPreference mBatteryPercent;
-    private Preference mHeaderImage;
     private SystemSettingListPreference mQsUI;
 
     private static ThemeUtils mThemeUtils;
@@ -69,7 +67,6 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         mBatteryStyle = (SystemSettingListPreference) findPreference(KEY_BATTERY_STYLE);
         mBatteryPercent = (SystemSettingListPreference) findPreference(KEY_BATTERY_PERCENT);
-        mHeaderImage = (Preference) findPreference(KEY_HEADER_IMAGE);
 
         int batterystyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -87,8 +84,6 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsUI.setValue(isA11Style);
         mQsUI.setSummary(mQsUI.getEntries()[index]);
         mQsUI.setOnPreferenceChangeListener(this);
-
-        setLayoutToPreference();
     }
 
     @Override
@@ -111,10 +106,6 @@ public class QuickSettings extends SettingsPreferenceFragment
             return true;
         }
         return false;
-    }
-
-    private void setLayoutToPreference() {
-        mHeaderImage.setLayoutResource(R.layout.tenx_preference);
     }
 
     private static void updateQsStyle(Context context) {

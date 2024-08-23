@@ -24,43 +24,49 @@
         android:title="@string/theme_category_title">
 
         <!-- Monet Theme Engine -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="monet_settings"
+            tenx:position="top"
             android:title="@string/monet_settings_title"
             android:summary="@string/monet_settings_sammary"
             android:fragment="com.tenx.settings.fragments.theme.MonetSettings" />
 
         <!-- Icon pack -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="android.theme.customization.icon_pack"
+            tenx:position="middle"
             android:title="@string/theme_customization_icon_pack_title"
             android:summary="@string/theme_customization_icon_pack_summary"
             android:fragment="com.tenx.settings.fragments.theme.StatusBarIcons"/>
 
         <!-- Adaptive icon pack -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="android.theme.customization.adaptive_icon_shape"
+            tenx:position="middle"
             android:title="@string/theme_customization_icon_shape_title"
             android:summary="@string/theme_customization_icon_shape_summary"
             android:fragment="com.tenx.settings.fragments.theme.IconShapes"/>
 
         <!-- Font style -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="android.theme.customization.fonts"
+            tenx:position="middle"
             android:title="@string/theme_customization_font_title"
             android:summary="@string/theme_customization_font_summary"
             android:fragment="com.tenx.settings.fragments.theme.FontsPicker"/>
 
         <!-- Signal icon style -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="android.theme.customization.signal_icon"
+            tenx:position="middle"
             android:title="@string/theme_customization_signal_icon_title"
             android:summary="@string/theme_customization_signal_icon_summary"
             android:fragment="com.tenx.settings.fragments.theme.SignalIcons"/>
 
         <!-- Wifi icon style -->
-        <Preference
+        <com.tenx.support.preferences.TenXPreference
             android:key="android.theme.customization.wifi_icon"
+            tenx:position="middle"
             android:title="@string/theme_customization_wifi_icon_title"
             android:summary="@string/theme_customization_wifi_icon_summary"
             android:fragment="com.tenx.settings.fragments.theme.WifiIcons"/>
