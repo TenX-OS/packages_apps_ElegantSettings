@@ -26,7 +26,7 @@
         tenx:position="top"
         android:defaultValue="false" />
 
-    <ListPreference
+    <com.tenx.support.preferences.SystemSettingListPreference
         android:key="qs_header_provider"
         android:title="@string/qs_header_provider_title"
         tenx:position="middle"
@@ -35,7 +35,7 @@
         android:entryValues="@array/qs_header_provider_values"
         android:dependency="status_bar_custom_header" />
 
-    <ListPreference
+    <com.tenx.support.preferences.SystemSettingListPreference
         android:key="daylight_header_pack"
         android:title="@string/qs_header_daylight_pack_title"
         tenx:position="middle"
