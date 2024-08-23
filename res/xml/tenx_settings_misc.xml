@@ -31,6 +31,13 @@
             android:summary="@string/three_finger_gesture_summary"
             android:defaultValue="false" />
 
+        <!-- PIF spoofing -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="pif_json_file_preference"
+            tenx:position="middle"
+            android:title="@string/pif_spoofing_title"
+            android:summary="@string/pif_spoofing_summary"/>
+
         <!-- No storage restriction -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="no_storage_restrict"
