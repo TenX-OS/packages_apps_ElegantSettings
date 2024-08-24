@@ -75,6 +75,7 @@
     <string name="saver_category_title">Saver</string>
     <string name="heads_up_category_title">Heads up</string>
     <string name="screen_off_category_title">Screen off</string>
+    <string name="elements_category_title">Elements</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -756,4 +757,10 @@
     <string name="gameprops_summary">Enables Per-app spoofing options within the PixelProps</string>
     <string name="gameprops_load_json_title">Select Per-app Props JSON File</string>
     <string name="gameprops_load_json_summary">Pick Per-app JSON file to be used for spoofing games</string>
+
+    <!-- Ambient music ticker location -->
+    <string name="ambient_music_location">Show ambient music ticker</string>
+    <string name="ambient_music_disabled">Disabled</string>
+    <string name="ambient_music_bottom">At the bottom (default)</string>
+    <string name="ambient_music_center">Centered (under the clock)</string>
 </resources>

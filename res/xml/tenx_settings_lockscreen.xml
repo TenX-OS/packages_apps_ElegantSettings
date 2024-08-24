@@ -194,4 +194,23 @@
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.support.preferences.TenXPreferenceCategory
+        android:key="elements"
+        android:title="@string/elements_category_title">
+
+        <!-- Pixel like now playing -->
+        <com.tenx.support.preferences.SecureSettingListPreference
+            android:key="ambient_music_ticker"
+            tenx:position="full"
+            android:title="@string/ambient_music_location"
+            android:summary="%s"
+            android:entries="@array/ambient_music_location_entries"
+            android:entryValues="@array/ambient_music_location_values"
+            android:defaultValue="1" />
+
+    </com.tenx.support.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>
