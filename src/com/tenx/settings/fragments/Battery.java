@@ -32,11 +32,14 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import lineageos.preference.LineagePartsPreference;
 
+import com.tenx.support.preferences.TenXPreference;
+
 public class Battery extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Battery";
 
+    private static final String KEY_BATTERY_SAVER_CATEGORY = "battery_saver";
     private static final String KEY_BATTERY_LIGHT_PREFERENCE_CATRGORY = "battery_light";
     private static final String KEY_BATTERY_LIGHT = "battery_lights";
     private static final String KEY_SENSOR_BLOCK = "sensor_block_settings";
@@ -44,7 +47,7 @@ public class Battery extends SettingsPreferenceFragment
 
     private LineagePartsPreference mBatteryLight;
     private Preference mSensorBlock;
-    private Preference mSmartPixels;
+    private TenXPreference mSmartPixels;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,7 +60,7 @@ public class Battery extends SettingsPreferenceFragment
 
         mBatteryLight = (LineagePartsPreference) findPreference(KEY_BATTERY_LIGHT);
         mSensorBlock = (Preference) findPreference(KEY_SENSOR_BLOCK);
-        mSmartPixels = (Preference) findPreference(KEY_SMART_PIXELS);
+        mSmartPixels = (TenXPreference) findPreference(KEY_SMART_PIXELS);
 
         boolean mBatLightsSupported = res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
@@ -67,6 +70,15 @@ public class Battery extends SettingsPreferenceFragment
                     (PreferenceCategory) prefScreen.findPreference(KEY_BATTERY_LIGHT_PREFERENCE_CATRGORY);
             prefScreen.removePreference(lightsCategory);
         }
+
+        mSmartPixels = (TenXPreference) prefScreen.findPreference(KEY_SMART_PIXELS);
+        boolean mSmartPixelsSupported = res.getBoolean(
+                com.android.internal.R.bool.config_supportSmartPixels);
+
+        PreferenceCategory batterySaverCategory = (PreferenceCategory) findPreference(KEY_BATTERY_SAVER_CATEGORY);
+
+        if (!mSmartPixelsSupported)
+            batterySaverCategory.removePreference(mSmartPixels);
 
         setLayoutToPreference();
     }
