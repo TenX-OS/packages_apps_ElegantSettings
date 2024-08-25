@@ -34,11 +34,19 @@
         <!-- Pixel navbar animation -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
-            tenx:position="bottom"
+            tenx:position="middle"
             android:title="@string/pixel_navbar_anim_title"
             android:summary="@string/pixel_navbar_anim_summary"
             android:defaultValue="true"
             android:dependency="force_show_navbar" />
+
+        <!-- Pulse music visualizer -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="pulse_settings"
+            tenx:position="bottom"
+            android:title="@string/pulse_settings"
+            android:summary="@string/pulse_settings_summary"
+            android:fragment="com.tenx.settings.fragments.navigation.PulseSettings" />
 
      </com.tenx.support.preferences.TenXPreferenceCategory>
 
