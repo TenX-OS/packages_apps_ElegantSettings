@@ -33,4 +33,37 @@
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.support.preferences.TenXPreferenceCategory
+        android:key="vibration"
+        android:title="@string/vibration_category_title">
+
+        <!-- Vibrate on connect -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_connect"
+            tenx:position="top"
+            android:title="@string/incall_vibrate_connect_title"
+            android:summary="@string/incall_vibrate_connect_summary"
+            android:defaultValue="false" />
+
+        <!-- Vibrate on call waiting -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_callwaiting"
+            tenx:position="middle"
+            android:title="@string/incall_vibrate_call_wait_title"
+            android:summary="@string/incall_vibrate_call_wait_summary"
+            android:defaultValue="false" />
+
+        <!-- Vibrate on disconnect -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_disconnect"
+            tenx:position="bottom"
+            android:title="@string/incall_vibrate_disconnect_title"
+            android:summary="@string/incall_vibrate_disconnect_summary"
+            android:defaultValue="false" />
+
+    </com.tenx.support.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>

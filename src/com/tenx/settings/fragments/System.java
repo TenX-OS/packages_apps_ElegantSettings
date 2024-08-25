@@ -28,15 +28,32 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.tenx.settings.utils.TelephonyUtils;
+
+import com.tenx.support.preferences.TenXPreferenceCategory;
+
 public class System extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "System";
 
+    private static final String KEY_VIBRATE_CATEGORY = "vibration";
+    private static final String KEY_VIBRATE_CONNECT = "vibrate_on_connect";
+    private static final String KEY_VIBRATE_CALLWAITING = "vibrate_on_callwaiting";
+    private static final String KEY_VIBRATE_DISCONNECT = "vibrate_on_disconnect";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.tenx_settings_system);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        final PreferenceCategory vibCategory = prefScreen.findPreference(KEY_VIBRATE_CATEGORY);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(vibCategory);
+        }
     }
 
     @Override

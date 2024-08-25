@@ -77,6 +77,7 @@
     <string name="screen_off_category_title">Screen off</string>
     <string name="music_ticker_category_title">Music ticker</string>
     <string name="sound_category_title">Sound</string>
+    <string name="vibration_category_title">Vibration</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -812,4 +813,12 @@
     <string name="max_call_volume_title">Calls</string>
     <string name="max_alarm_volume_title">Alarms</string>
     <string name="steps_unit">steps</string>
+
+    <!-- In-call feedback -->
+    <string name="incall_vibrate_connect_title">On connect</string>
+    <string name="incall_vibrate_connect_summary">Vibrates when the call is connected</string>
+    <string name="incall_vibrate_call_wait_title">On call waiting</string>
+    <string name="incall_vibrate_call_wait_summary">Vibrates when call is on wait</string>
+    <string name="incall_vibrate_disconnect_title">On disconnect</string>
+    <string name="incall_vibrate_disconnect_summary">Vibrates when call is disconnected</string>
 </resources>
