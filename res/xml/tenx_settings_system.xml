@@ -66,4 +66,40 @@
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.support.preferences.TenXPreferenceCategory
+        android:key="flashlight_category"
+        android:title="@string/flashlight_category_title">
+
+        <!-- Flashlight on call -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="flashlight_on_call"
+            tenx:position="top"
+            android:title="@string/flashlight_on_call_title"
+            android:entries="@array/flashlight_on_call_entries"
+            android:entryValues="@array/flashlight_on_call_values"
+            android:defaultValue="0" />
+
+        <!-- Flashlight on call ignore DND -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="flashlight_on_call_ignore_dnd"
+            tenx:position="middle"
+            android:title="@string/flashlight_on_call_ignore_dnd_title"
+            android:summary="@string/flashlight_on_call_ignore_dnd_summary"
+            android:defaultValue="false" /> 
+
+         <!-- Flashlight on call rate -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="flashlight_on_call_rate"
+            tenx:position="bottom"
+            android:title="@string/flashlight_on_call_rate_title"
+            android:defaultValue="1"
+            android:max="5"
+            settings:min="1"
+            settings:units="@string/unit_hz" />
+
+    </com.tenx.support.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>

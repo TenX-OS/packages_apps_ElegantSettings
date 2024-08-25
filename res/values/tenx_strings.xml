@@ -78,6 +78,7 @@
     <string name="music_ticker_category_title">Music ticker</string>
     <string name="sound_category_title">Sound</string>
     <string name="vibration_category_title">Vibration</string>
+    <string name="flashlight_category_title">Flashlight</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -821,4 +822,15 @@
     <string name="incall_vibrate_call_wait_summary">Vibrates when call is on wait</string>
     <string name="incall_vibrate_disconnect_title">On disconnect</string>
     <string name="incall_vibrate_disconnect_summary">Vibrates when call is disconnected</string>
+
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Blink for incoming call</string>
+    <string name="flashlight_on_call_disabled">Disabled</string>
+    <string name="flashlight_on_call_ringer">When ringing</string>
+    <string name="flashlight_on_call_no_ringer">When ringer is silent</string>
+    <string name="flashlight_on_call_silent">When entirely silent (no ringer or vibrator)</string>
+    <string name="flashlight_on_call_always">Always</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Ignore DND</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Whether to flash when Do Not Disturb mode is active</string>
+    <string name="flashlight_on_call_rate_title">Blink rate</string>
 </resources>
