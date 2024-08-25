@@ -859,4 +859,8 @@
     <string name="three_fingers_swipe_action_notifications_panel">Toggle notifications panel</string>
     <string name="three_fingers_swipe_action_expand_qs_panel">Expand QS panel</string>
     <string name="three_fingers_swipe_action_ringer_modes">Change ringer mode</string>
+
+    <!-- Compact QS Media Player-->
+    <string name="qs_compact_media_player_mode_title">Compact QS Media player</string>
+    <string name="qs_compact_media_player_mode_summary">Enable compact mode for QuickSettings media player (restart systemui)</string>
 </resources>

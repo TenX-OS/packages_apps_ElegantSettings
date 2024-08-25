@@ -102,6 +102,14 @@
             android:summary="@string/floating_rotation_button_summary"
             android:defaultValue="true" />
 
+        <!-- QS Media Player  -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_compact_media_player_mode"
+	    tenx:position="middle"
+            android:title="@string/qs_compact_media_player_mode_title"
+            android:summary="@string/qs_compact_media_player_mode_summary"
+            android:defaultValue="false"  />
+
         <!-- Adaptive playback -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="adaptive_playback_enabled"
