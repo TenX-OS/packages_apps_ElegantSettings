@@ -361,6 +361,26 @@
             settings:interval="1"
             android:defaultValue="4" />
 
+        <!-- QS Rows (Portrait)-->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_layout_rows"
+            tenx:position="middle"
+            android:title="@string/qs_rows_portrait_title"
+            android:max="5"
+            settings:min="2"
+            settings:interval="1"
+            android:defaultValue="4" />
+
+        <!-- QS Rows (landscape) -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_layout_rows_landscape"
+            tenx:position="middle"
+            android:title="@string/qs_rows_landscape_title"
+            android:max="3"
+            settings:min="1"
+            settings:interval="1"
+            android:defaultValue="2" />
+
         <!-- Quick QS rows (portrait) -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qqs_layout_rows"
