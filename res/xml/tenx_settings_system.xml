@@ -19,4 +19,18 @@
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/system_settings_title" >
 
+    <com.tenx.support.preferences.TenXPreferenceCategory
+        android:key="sound"
+        android:title="@string/sound_category_title">
+
+        <!-- Volume steps -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="volume_steps"
+            tenx:position="full"
+            android:title="@string/volume_steps_title"
+            android:summary="@string/volume_steps_summary"
+            android:fragment="com.tenx.settings.fragments.system.VolumeSteps" />
+
+    </com.tenx.support.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>

@@ -76,6 +76,7 @@
     <string name="heads_up_category_title">Heads up</string>
     <string name="screen_off_category_title">Screen off</string>
     <string name="music_ticker_category_title">Music ticker</string>
+    <string name="sound_category_title">Sound</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -803,4 +804,12 @@
     <string name="pulse_custom_div">Bar spacing</string>
     <string name="pulse_filled_block_size">Block size</string>
     <string name="pulse_empty_block_size">Block spacing</string>
+
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Volume Steps</string>
+    <string name="volume_steps_summary">Control the granularity of each stream</string>
+    <string name="max_music_volume_title">Media</string>
+    <string name="max_call_volume_title">Calls</string>
+    <string name="max_alarm_volume_title">Alarms</string>
+    <string name="steps_unit">steps</string>
 </resources>
