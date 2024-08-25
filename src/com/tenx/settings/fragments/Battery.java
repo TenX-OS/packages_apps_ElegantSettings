@@ -79,25 +79,11 @@ public class Battery extends SettingsPreferenceFragment
 
         if (!mSmartPixelsSupported)
             batterySaverCategory.removePreference(mSmartPixels);
-
-        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
-    }
-
-    private void setLayoutToPreference() {
-        boolean mBatLightsSupported = getActivity().getApplicationContext().getResources().getInteger(
-                org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
-
-        if (mBatLightsSupported) {
-            mBatteryLight.setLayoutResource(R.layout.tenx_preference);
-        }
-
-        mSensorBlock.setLayoutResource(R.layout.tenx_preference_top);
-        mSmartPixels.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

@@ -26,6 +26,7 @@
        	<!-- Battery lights -->
         <lineageos.preference.LineagePartsPreference
             android:key="battery_lights"
+            tenx:position="full"
             settings:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
             settings:requiresConfigMask="64" />
 
