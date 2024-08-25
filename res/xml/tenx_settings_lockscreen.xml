@@ -199,17 +199,27 @@
 
     <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="elements"
-        android:title="@string/elements_category_title">
+        android:title="@string/music_ticker_category_title">
 
         <!-- Pixel like now playing -->
         <com.tenx.support.preferences.SecureSettingListPreference
             android:key="ambient_music_ticker"
-            tenx:position="full"
+            tenx:position="top"
             android:title="@string/ambient_music_location"
             android:summary="%s"
             android:entries="@array/ambient_music_location_entries"
             android:entryValues="@array/ambient_music_location_values"
             android:defaultValue="1" />
+
+        <!-- Pixel like now playing icon -->
+        <com.tenx.support.preferences.SecureSettingListPreference
+            android:key="ambient_music_ticker_icon"
+            tenx:position="bottom"
+            android:title="@string/ambient_music_icon_title"
+            android:summary="%s"
+            android:entries="@array/ambient_music_icon_entries"
+            android:entryValues="@array/ambient_music_icon_values"
+            android:defaultValue="0" />
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 

@@ -75,7 +75,7 @@
     <string name="saver_category_title">Saver</string>
     <string name="heads_up_category_title">Heads up</string>
     <string name="screen_off_category_title">Screen off</string>
-    <string name="elements_category_title">Elements</string>
+    <string name="music_ticker_category_title">Music ticker</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -763,4 +763,9 @@
     <string name="ambient_music_disabled">Disabled</string>
     <string name="ambient_music_bottom">At the bottom (default)</string>
     <string name="ambient_music_center">Centered (under the clock)</string>
+
+    <!-- Ambient music ticker icon -->
+    <string name="ambient_music_icon_title">Icon</string>
+    <string name="ambient_music_icon_default">Default</string>
+    <string name="ambient_music_icon_app">App</string>
 </resources>
