@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -45,6 +46,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import lineageos.providers.LineageSettings;
+
+import static org.lineageos.internal.util.DeviceKeysConstants.*;
+
 public class Misc extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -54,11 +59,14 @@ public class Misc extends SettingsPreferenceFragment
     private static final String KEY_PIF_JSON_FILE_PREFERENCE = "pif_json_file_preference";
     private static final String SYS_GAMEPROP_ENABLED = "persist.sys.gameprops.enabled";
     private static final String KEY_GAME_PROPS_JSON_FILE_PREFERENCE = "game_props_json_file_preference";
+    private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
 
     private SystemSettingSwitchPreference mPocketJudge;
     private Preference mPifJsonFilePreference;
     private Preference mGamePropsJsonFilePreference;
     private Preference mGamePropsSpoof;
+    private ListPreference mThreeFingersSwipeAction;
+
     private Handler mHandler;
 
     @Override
@@ -81,6 +89,33 @@ public class Misc extends SettingsPreferenceFragment
         mGamePropsSpoof = findPreference(SYS_GAMEPROP_ENABLED);
         mGamePropsJsonFilePreference = findPreference(KEY_GAME_PROPS_JSON_FILE_PREFERENCE);
         mGamePropsSpoof.setOnPreferenceChangeListener(this);
+
+        Action defaultThreeFingersSwipeAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_threeFingersSwipeBehavior));
+        Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
+                LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
+                defaultThreeFingersSwipeAction);
+        mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
+    }
+
+    private ListPreference initList(String key, Action value) {
+        return initList(key, value.ordinal());
+    }
+
+    private ListPreference initList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        if (list == null) return null;
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        LineageSettings.System.putIntForUser(getContentResolver(), setting, Integer.valueOf(value), UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -230,6 +265,10 @@ public class Misc extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mGamePropsSpoof) {
             SystemRestartUtils.showSystemRestartDialog(getContext());
+            return true;
+        } else if (preference == mThreeFingersSwipeAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION);
             return true;
         }
         return false;

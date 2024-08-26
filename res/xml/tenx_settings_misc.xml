@@ -24,11 +24,12 @@
         android:title="@string/misc_category_title">
 
         <!-- Three fingers swipe screenshot -->
-        <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="three_finger_gesture"
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="three_fingers_swipe"
             tenx:position="top"
-            android:title="@string/three_finger_gesture"
-            android:summary="@string/three_finger_gesture_summary"
+            android:title="@string/three_fingers_swipe_title"
+            android:entries="@array/three_fingers_swipe_action_entries"
+            android:entryValues="@array/three_fingers_swipe_action_values"
             android:defaultValue="false" />
 
         <!-- PIF spoofing -->
