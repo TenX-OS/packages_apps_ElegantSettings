@@ -56,14 +56,6 @@
             android:summary="@string/status_bar_data_disabled_icon_summary"
             android:defaultValue="true" />
 
-        <!-- Roaming indicator icon -->
-        <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="roaming_indicator_icon"
-            tenx:position="middle"
-            android:title="@string/roaming_indicator_icon_title"
-            android:summary="@string/roaming_indicator_icon_summary"
-            android:defaultValue="true"/>
-
         <!-- 4G icon -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="show_fourg_icon"
