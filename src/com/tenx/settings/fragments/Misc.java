@@ -90,11 +90,9 @@ public class Misc extends SettingsPreferenceFragment
         mGamePropsJsonFilePreference = findPreference(KEY_GAME_PROPS_JSON_FILE_PREFERENCE);
         mGamePropsSpoof.setOnPreferenceChangeListener(this);
 
-        Action defaultThreeFingersSwipeAction = Action.fromIntSafe(res.getInteger(
-                org.lineageos.platform.internal.R.integer.config_threeFingersSwipeBehavior));
         Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
                 LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
-                defaultThreeFingersSwipeAction);
+                Action.NOTHING);
         mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
     }
 
