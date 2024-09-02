@@ -40,10 +40,18 @@
         android:key="vibration"
         android:title="@string/vibration_category_title">
 
+	<!-- System Haptics intensities preference -->
+        <com.tenx.support.preferences.TenXPreference
+	    android:key="haptics_settings"
+	    tenx:position="top"
+    	    android:title="@string/haptics_settings_title"
+            android:summary="@string/haptics_settings_summary"
+            android:fragment="com.tenx.settings.fragments.system.HapticsPreferenceFragment"/>
+
         <!-- Vibrate on connect -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="vibrate_on_connect"
-            tenx:position="top"
+            tenx:position="middle"
             android:title="@string/incall_vibrate_connect_title"
             android:summary="@string/incall_vibrate_connect_summary"
             android:defaultValue="false" />
