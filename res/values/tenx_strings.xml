@@ -884,4 +884,8 @@
     <string name="qs_panel_tile_haptic_intensity_title">QS tile haptics intensity</string>
     <string name="qs_haptics_intensity_title">QS fling haptics intensity</string>
     <string name="volume_panel_haptic_feedback_title">Vibrate on pressing volume bottom</string>
+
+    <!-- Settings dashboard customisations -->
+    <string name="tenx_settings_dashboard_title">Dashboard</string>
+    <string name="tenx_settings_dashboard_summary">Settings dashboard customisations</string>
 </resources>

@@ -32,6 +32,14 @@
                 <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </com.tenx.support.preferences.TenXPreference>
 
+        <!-- Clock & date -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="clock"
+            tenx:position="middle"
+            android:title="@string/status_bar_clock_and_date_title"
+            android:summary="@string/status_bar_clock_and_date_summary"
+            android:fragment="com.tenx.settings.fragments.statusbar.Clock" />
+
         <!-- Statusbar network traffic -->
         <com.tenx.support.preferences.TenXPreference
             android:key="network_traffic_settings"
@@ -99,14 +107,6 @@
             android:title="@string/status_bar_battery_text_charging_title"
             android:summary="@string/status_bar_battery_text_charging_summary"
             android:defaultValue="true" />
-
-        <!-- Clock & date -->
-        <com.tenx.support.preferences.TenXPreference
-            android:key="clock"
-            tenx:position="middle"
-            android:title="@string/status_bar_clock_and_date_title"
-            android:summary="@string/status_bar_clock_and_date_summary"
-            android:fragment="com.tenx.settings.fragments.statusbar.Clock" />
 
         <!-- Logo -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference

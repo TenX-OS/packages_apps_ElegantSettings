@@ -13,102 +13,106 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/dashboard_title">
 
-    <PreferenceCategory
-        android:title="@string/settings_category_title">
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
+        android:defaultValue="false"
+        android:key="settings_dashboard_background_shown"
+        android:summary="@string/settings_dashboard_background_shown_summary"
+        android:title="@string/settings_dashboard_background_shown_title"
+        tenx:position="top" />
 
-        <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="settings_dashboard_background_shown"
-            tenx:position="top"
-            android:title="@string/settings_dashboard_background_shown_title"
-            android:summary="@string/settings_dashboard_background_shown_summary"
-            android:defaultValue="false" />
+    <com.tenx.support.preferences.SystemSettingListPreference
+        android:defaultValue="0"
+        android:dependency="settings_dashboard_background_shown"
+        android:entries="@array/settings_dashboard_background_style_entries"
+        android:entryValues="@array/settings_dashboard_background_style_values"
+        android:key="settings_dashboard_background_style"
+        android:title="@string/settings_dashboard_background_style_title"
+        tenx:position="middle" />
 
-        <com.tenx.support.preferences.SystemSettingListPreference
-            android:key="settings_dashboard_background_style"
-            tenx:position="middle"
-            android:title="@string/settings_dashboard_background_style_title"
-            android:entries="@array/settings_dashboard_background_style_entries"
-            android:entryValues="@array/settings_dashboard_background_style_values"
-            android:defaultValue="0" />
+    <com.tenx.support.preferences.SystemSettingSeekBarPreference
+        android:defaultValue="50"
+        android:dependency="settings_dashboard_background_shown"
+        android:key="settings_dashboard_background_size"
+        android:max="90"
+        android:title="@string/settings_background_size_title"
+        settings:interval="1"
+        settings:min="30"
+        settings:units="dp"
+        tenx:position="middle" />
 
-        <com.tenx.support.preferences.SystemSettingSeekBarPreference
-            android:key="settings_dashboard_background_size"
-            tenx:position="middle"
-            android:title="@string/settings_background_size_title"
-            android:max="90"
-            settings:min="30"
-            settings:interval="1"
-            settings:units="dp"
-            android:defaultValue="50" />
+    <com.tenx.support.colorpicker.ColorPickerPreference
+        android:defaultValue="0xff1a73e8"
+        android:dependency="settings_dashboard_background_shown"
+        android:key="settings_dashboard_background_gradient_start_color"
+        android:persistent="false"
+        android:title="@string/settings_dashboard_background_gradient_start_color"
+        tenx:position="middle" />
 
-        <com.tenx.support.colorpicker.ColorPickerPreference
-            android:key="settings_dashboard_background_gradient_start_color"
-            tenx:position="middle"
-            android:title="@string/settings_dashboard_background_gradient_start_color"
-            android:defaultValue="0xff1a73e8"
-            android:persistent="false" />
+    <com.tenx.support.colorpicker.ColorPickerPreference
+        android:defaultValue="0xff1a73e8"
+        android:dependency="settings_dashboard_background_shown"
+        android:key="settings_dashboard_background_gradient_end_color"
+        android:persistent="false"
+        android:title="@string/settings_dashboard_background_gradient_end_color"
+        tenx:position="middle" />
 
-        <com.tenx.support.colorpicker.ColorPickerPreference
-            android:key="settings_dashboard_background_gradient_end_color"
-            tenx:position="middle"
-            android:title="@string/settings_dashboard_background_gradient_end_color"
-            android:defaultValue="0xff1a73e8"
-            android:persistent="false" />
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
+        android:defaultValue="false"
+        android:dependency="settings_dashboard_background_shown"
+        android:key="settings_dashboard_background_color"
+        android:summary="@string/settings_dashboard_background_random_color_summary"
+        android:title="@string/settings_dashboard_background_random_color_title"
+        tenx:position="middle" />
 
-        <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="settings_dashboard_background_color"
-            tenx:position="middle"
-            android:title="@string/settings_dashboard_background_random_color_title"
-            android:summary="@string/settings_dashboard_background_random_color_summary"
-            android:defaultValue="false" />
+    <com.tenx.support.preferences.SystemSettingListPreference
+        android:defaultValue="0"
+        android:dependency="settings_dashboard_background_shown"
+        android:entries="@array/settings_dashboard_background_arrow_entries"
+        android:entryValues="@array/settings_dashboard_background_arrow_values"
+        android:key="settings_dashboard_background_arrow"
+        android:title="@string/settings_dashboard_arrow_title"
+        tenx:position="middle" />
 
-        <com.tenx.support.preferences.SystemSettingListPreference
-            android:key="settings_dashboard_background_arrow"
-            tenx:position="middle"
-            android:title="@string/settings_dashboard_arrow_title"
-            android:entries="@array/settings_dashboard_background_arrow_entries"
-            android:entryValues="@array/settings_dashboard_background_arrow_values"
-            android:defaultValue="0" />
+    <com.tenx.support.preferences.SystemSettingListPreference
+        android:defaultValue="0"
+        android:dependency="settings_dashboard_background_shown"
+        android:entries="@array/settings_dashboard_arrow_color_entries"
+        android:entryValues="@array/settings_dashboard_arrow_color_values"
+        android:key="settings_dashboard_arrow_color"
+        android:title="@string/settings_dashboard_arrow_color_title"
+        tenx:position="middle" />
 
-        <com.tenx.support.preferences.SystemSettingListPreference
-            android:key="settings_dashboard_arrow_color"
-            tenx:position="middle"
-            android:title="@string/settings_dashboard_arrow_color_title"
-            android:entries="@array/settings_dashboard_arrow_color_entries"
-            android:entryValues="@array/settings_dashboard_arrow_color_values"
-            android:defaultValue="0" />
+    <com.tenx.support.preferences.SystemSettingSeekBarPreference
+        android:defaultValue="5"
+        android:dependency="settings_dashboard_background_shown"
+        android:key="settings_dashboard_background_stroke_width"
+        android:max="15"
+        android:title="@string/settings_dashboard_background_stroke_width_title"
+        settings:min="1"
+        settings:units="dp"
+        tenx:position="middle" />
 
-        <com.tenx.support.preferences.SystemSettingSeekBarPreference
-            android:key="settings_dashboard_background_stroke_width"
-            tenx:position="middle"
-            android:title="@string/settings_dashboard_background_stroke_width_title"
-            android:defaultValue="5"
-            android:max="15"
-            settings:min="1"
-            settings:units="dp" />
+    <com.tenx.support.preferences.SystemSettingListPreference
+        android:defaultValue="0"
+        android:dependency="settings_dashboard_background_shown"
+        android:entries="@array/settings_icon_color_entries"
+        android:entryValues="@array/settings_icon_color_values"
+        android:key="settings_dashboard_icon_color"
+        android:title="@string/settings_icon_color_title"
+        tenx:position="middle" />
 
-        <com.tenx.support.preferences.SystemSettingListPreference
-            android:key="settings_dashboard_icon_color"
-            tenx:position="middle"
-            android:title="@string/settings_icon_color_title"
-            android:entries="@array/settings_icon_color_entries"
-            android:entryValues="@array/settings_icon_color_values"
-            android:defaultValue="0" />
-
-        <com.tenx.support.preferences.SystemSettingListPreference
-            android:key="settings_dashboard_icon_styles"
-            tenx:position="bottom"
-            android:title="@string/settings_icon_styles_title"
-            android:entries="@array/settings_styles_color_entries"
-            android:entryValues="@array/settings_styles_color_values"
-            android:defaultValue="0" />
-
-    </PreferenceCategory>
-
+    <com.tenx.support.preferences.SystemSettingListPreference
+        android:defaultValue="0"
+        android:dependency="settings_dashboard_background_shown"
+        android:entries="@array/settings_styles_color_entries"
+        android:entryValues="@array/settings_styles_color_values"
+        android:key="settings_dashboard_icon_styles"
+        android:title="@string/settings_icon_styles_title"
+        tenx:position="bottom" />
+    
 </PreferenceScreen>
