@@ -48,6 +48,7 @@
     <string name="system_settings_summary">Xtend my system settings</string>
     <string name="dashboard_title">Dashboard</string>
     <string name="dashboard_summary">Dashboard customisations</string>
+    <string name="tenx_header_title">Header</string>
 
     <!-- Custom strings -->
     <string name="default_string">Default</string>
@@ -888,4 +889,38 @@
     <!-- Settings dashboard customisations -->
     <string name="tenx_settings_dashboard_title">Dashboard</string>
     <string name="tenx_settings_dashboard_summary">Settings dashboard customisations</string>
+
+    <!-- Settings header customisations -->
+    <string name="settings_header_title">Header</string>
+    <string name="settings_header_summary">Settings header customisations</string>
+    <string name="settings_tenx_dashboard_enabled_title">Enable</string>
+    <string name="settings_tenx_dashboard_enabled_summary">Show header in settings dashboard</string>
+    <string name="settings_tenx_dashboard_background_title">Background</string>
+    <string name="settings_tenx_dashboard_background_0">Default</string>
+    <string name="settings_tenx_dashboard_background_1">Background 1</string>
+    <string name="settings_tenx_dashboard_background_2">Background 2</string>
+    <string name="settings_tenx_dashboard_background_3">Background 3</string>
+    <string name="settings_tenx_dashboard_background_4">Background 4</string>
+    <string name="settings_tenx_dashboard_background_5">Background 5</string>
+    <string name="settings_tenx_dashboard_background_6">Background 6</string>
+    <string name="settings_tenx_dashboard_background_7">Background 7</string>
+    <string name="settings_tenx_dashboard_background_8">Background 8</string>
+    <string name="settings_tenx_dashboard_background_9">Background 9</string>
+    <string name="settings_tenx_dashboard_background_10">Background 10</string>
+    <string name="settings_tenx_dashboard_background_11">Background 11</string>
+    <string name="settings_tenx_dashboard_background_12">Background 12</string>
+    <string name="settings_tenx_dashboard_background_13">Background 13</string>
+    <string name="settings_tenx_dashboard_background_14">Background 14</string>
+    <string name="settings_tenx_dashboard_background_15">Background 15</string>
+    <string name="settings_tenx_dashboard_background_blur">Blur level</string>
+    <string name="settings_tenx_dashboard_corner_radius">Corner radius</string>
+    <string name="settings_tenx_dashboard_image_alpha_title">Image alpha</string>
+    <string name="settings_tenx_dashboard_custom_name_title">Custom name</string>
+    <string name="settings_tenx_dashboard_custom_name_summary">This name will be shown in the header</string>
+    <string name="weather_type_title">Weather</string>
+    <string name="weather_text_only">Weather text</string>
+    <string name="weather_city_temperature">City &amp; Temperature (With background)</string>
+    <string name="weather_city_temperature_status">City, Temperature &amp; status (With background)</string>
+    <string name="settings_tenx_dashboard_battery_bar_title">Battery bar</string>
+    <string name="settings_tenx_dashboard_battery_bar_summary">Show battery bar with percentage</string>
 </resources>

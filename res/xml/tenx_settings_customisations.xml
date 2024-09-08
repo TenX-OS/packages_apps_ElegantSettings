@@ -30,6 +30,14 @@
             android:summary="@string/tenx_settings_dashboard_summary"
             android:fragment="com.tenx.settings.fragments.dashboard.SettingsDashboard" />
 
+        <!-- Settings header customisations -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="settings_header"
+            tenx:position="bottom"
+            android:title="@string/settings_header_title"
+            android:summary="@string/settings_header_summary"
+            android:fragment="com.tenx.settings.fragments.dashboard.SettingsHeader" />
+
     </com.tenx.support.preferences.TenXPreferenceCategory>
 </PreferenceScreen>
 
