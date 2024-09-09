@@ -80,10 +80,18 @@
         android:key="notification"
         android:title="@string/misc_category_title">
 
+        <!-- Edge lights -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="ambient_edge_lights"
+            tenx:position="top"
+            android:title="@string/ambient_edge_light_action_title"
+            android:summary="@string/ambient_edge_light_summary"
+            android:fragment="com.tenx.settings.fragments.notification.AmbientEdgeLights" />
+
         <!-- Noisy notifications -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
-            tenx:position="top"
+            tenx:position="middle"
             android:title="@string/notification_sound_vib_screen_on_title"
             android:summary="@string/notification_sound_vib_screen_on_summary"
             android:defaultValue="true" />

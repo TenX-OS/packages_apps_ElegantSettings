@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The LibreMobileOS Foundation
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:tenx="http://schemas.android.com/apk/res-auto"
+    android:key="ambient_edge_lights"
+    android:title="@string/ambient_edge_light_action_title">
+
+    <com.tenx.support.preferences.SecureSettingSwitchPreference
+        android:key="pulse_ambient_light"
+        tenx:position="top"
+        android:title="@string/ambient_edge_light_enable_title"
+        android:summary="@string/ambient_edge_light_enable_summary"/>
+
+    <com.tenx.support.preferences.SecureSettingListPreference
+        android:key="pulse_ambient_light_color_mode"
+        tenx:position="middle"
+        android:title="@string/ambient_edge_light_color_mode_category_title"
+        android:entries="@array/ambient_edge_light_color_mode_entries"
+        android:entryValues="@array/ambient_edge_light_color_mode_values"
+        android:summary="%s"
+        android:defaultValue="1"
+        android:dependency="pulse_ambient_light" />
+
+    <com.tenx.support.colorpicker.ColorPickerSecurePreference
+        android:key="pulse_ambient_light_color"
+        tenx:position="middle"
+        android:title="@string/ambient_edge_light_color_mode_manual"
+        android:defaultValue="0xFF6ACEFF" />
+
+    <com.tenx.support.preferences.SecureSettingSwitchPreference
+        android:key="pulse_ambient_light_face_down"
+        tenx:position="middle"
+        android:title="@string/ambient_edge_light_face_down_title"
+        android:summary="@string/ambient_edge_light_face_down_summary"
+        android:defaultValue="@*android:bool/config_edgeLightFaceDownEnabledByDefault" />
+
+    <com.tenx.support.preferences.SecureSettingSeekBarPreference
+        android:key="pulse_ambient_light_duration"
+        tenx:position="middle"
+        android:title="@string/ambient_edge_light_duration_title"
+        android:max="10"
+        android:min="1"
+        android:defaultValue="2"
+        android:dependency="pulse_ambient_light"
+        settings:units="sec" />
+
+    <com.tenx.support.preferences.SecureSettingSeekBarPreference
+        android:key="pulse_ambient_light_repeat_count"
+        tenx:position="middle"
+        android:title="@string/ambient_edge_light_repeat_count_title"
+        android:max="10"
+        android:min="0"
+        android:defaultValue="0"
+        android:dependency="pulse_ambient_light"
+        settings:units="times" />
+
+    <com.tenx.support.preferences.SecureSettingSeekBarPreference
+        android:key="pulse_ambient_light_width"
+        tenx:position="bottom"
+        android:title="@string/ambient_edge_light_width_title"
+        android:max="150"
+        android:min="1"
+        android:defaultValue="125"
+        android:dependency="pulse_ambient_light"
+        settings:units="px" />
+
+</PreferenceScreen>
