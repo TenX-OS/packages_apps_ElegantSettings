@@ -927,4 +927,8 @@
     <!-- Progressbar styles -->
     <string name="theme_customization_progressbar_title">Progressbar</string>
     <string name="theme_customization_progressbar_summary">Customize progressbar styles</string>
+
+    <!-- Brightness slider styles -->
+    <string name="theme_customization_brightness_slider_title">Brightness slider style</string>
+    <string name="theme_customization_brightness_slider_summary">Set custom brightness slider style</string>
 </resources>

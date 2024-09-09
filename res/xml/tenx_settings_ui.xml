@@ -84,10 +84,18 @@
         <!-- Progressbar styles -->
         <com.tenx.support.preferences.TenXPreference
             android:key="android.theme.customization.progress_bar"
-            tenx:position="bottom"
+            tenx:position="middle"
             android:title="@string/theme_customization_progressbar_title"
             android:summary="@string/theme_customization_progressbar_summary"
             android:fragment="com.tenx.settings.fragments.theme.ProgressbarStyles"/>
+
+        <!-- Brightness slider styles -->
+	<com.tenx.support.preferences.TenXPreference
+	    android:key="android.theme.customization.brightness_slider"
+	    tenx:position="bottom"
+            android:title="@string/theme_customization_brightness_slider_title"
+            android:summary="@string/theme_customization_brightness_slider_summary"
+            android:fragment="com.tenx.settings.fragments.theme.BrightnessSlider"/>
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
