@@ -31,6 +31,32 @@
             android:summary="@string/force_show_navbar_summary"
             android:defaultValue="true" />
 
+        <!-- Navbar arrow keys -->
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+            android:key="navigation_bar_menu_arrow_keys"
+            tenx:position="middle"
+            android:title="@string/navbar_arrow_keys_title"
+            android:summary="@string/navbar_arrow_keys_summary"
+            android:defaultValue="false" />
+
+        <!-- Navbar layout -->
+        <com.tenx.support.preferences.SecureSettingListPreference
+            android:key="navbar_layout_views"
+            tenx:position="middle"
+            android:title="@string/navbar_layout_title"
+            android:summary="%s"
+            android:entries="@array/navbar_layout_entries"
+            android:entryValues="@array/navbar_layout_values"
+            android:defaultValue="default" />
+
+        <!-- Navbar inverse -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="navbar_inverse_layout"
+            tenx:position="middle"
+            android:title="@string/navbar_invert_layout_title"
+            android:summary="@string/navbar_invert_layout_summary"
+            android:defaultValue="false" />
+
         <!-- Pixel navbar animation -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
