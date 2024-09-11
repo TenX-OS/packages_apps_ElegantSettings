@@ -32,6 +32,14 @@
             android:entryValues="@array/three_fingers_swipe_action_values"
             android:defaultValue="false" />
 
+        <!-- Ignore window secure flags -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            tenx:position="middle"
+            android:title="@string/ignore_window_secure_title"
+            android:summary="@string/ignore_window_secure_summary"
+            android:defaultValue="false"/>
+
         <!-- PIF spoofing -->
         <com.tenx.support.preferences.TenXPreference
             android:key="pif_json_file_preference"

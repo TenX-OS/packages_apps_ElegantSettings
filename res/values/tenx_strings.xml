@@ -978,4 +978,8 @@
     <string name="ambient_edge_light_repeat_direction_title">Light repeat mode</string>
     <string name="ambient_edge_light_repeat_direction_restart">Restart</string>
     <string name="ambient_edge_light_repeat_direction_reverse">Reverse</string>
+
+    <!-- Ignore secure window -->
+    <string name="ignore_window_secure_title">Ignore window secure flags</string>
+    <string name="ignore_window_secure_summary">Fixes black screenshots and recordings, May lead to privacy leaks, Restart apps to apply changes</string>
 </resources>
