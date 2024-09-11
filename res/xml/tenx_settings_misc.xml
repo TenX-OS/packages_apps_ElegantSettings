@@ -124,7 +124,7 @@
             tenx:position="middle"
             android:title="@string/adaptive_playback_title"
             android:summary="@string/adaptive_playback_summary"
-            android:persistent="false" />
+            android:defaultValue="false" />
 
         <!-- Adaptive playback timeout -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
