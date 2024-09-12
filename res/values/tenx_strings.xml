@@ -784,6 +784,10 @@
     <string name="ambient_music_icon_default">Default</string>
     <string name="ambient_music_icon_app">App</string>
 
+    <!-- Ambient music ticker use animation -->
+    <string name="ambient_music_ticker_use_animated_icon_title">Animated icon</string>
+    <string name="ambient_music_ticker_use_animated_icon_summary">Use lottie animation instead of music icon (No applicable for app icon)</string>
+
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">About Pulse</string>
     <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>

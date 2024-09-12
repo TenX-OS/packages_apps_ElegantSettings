@@ -214,12 +214,20 @@
         <!-- Pixel like now playing icon -->
         <com.tenx.support.preferences.SecureSettingListPreference
             android:key="ambient_music_ticker_icon"
-            tenx:position="bottom"
+            tenx:position="middle"
             android:title="@string/ambient_music_icon_title"
             android:summary="%s"
             android:entries="@array/ambient_music_icon_entries"
             android:entryValues="@array/ambient_music_icon_values"
             android:defaultValue="0" />
+
+        <!-- Pixel like now playing animated icon -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="ambient_music_ticker_use_animation"
+            tenx:position="bottom"
+            android:title="@string/ambient_music_ticker_use_animated_icon_title"
+            android:summary="@string/ambient_music_ticker_use_animated_icon_summary"
+            android:defaultValue="false" />
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
