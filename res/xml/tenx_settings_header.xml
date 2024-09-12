@@ -94,8 +94,50 @@
     <!-- Battery bar -->
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="settings_tenx_dashboard_battery_bar"
-        tenx:position="bottom"
+        tenx:position="middle"
         android:title="@string/settings_tenx_dashboard_battery_bar_title"
         android:summary="@string/settings_tenx_dashboard_battery_bar_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false"
+        android:dependency="settings_tenx_dashboard_enabled" />
+
+    <!-- Battery bar custom color on levels -->
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
+        android:key="settings_tenx_dashboard_battery_level_color"
+        tenx:position="middle"
+        android:title="@string/settings_tenx_dashboard_battery_bar_level_color_title"
+        android:summary="@string/settings_tenx_dashboard_battery_bar_level_color_summary"
+        android:defaultValue="false"  
+        android:dependency="settings_tenx_dashboard_battery_bar" />
+
+    <!-- Battery level color less than 80% -->
+    <com.tenx.support.colorpicker.ColorPickerSystemPreference
+        android:key="settings_tenx_dashboard_battery_level_color_eighty"
+        tenx:position="middle"
+        android:title="@string/settings_tenx_dashboard_battery_bar_level_color_eighty"
+        android:defaultValue="0xff0FFF50"
+        android:dependency="settings_tenx_dashboard_battery_level_color" />
+
+    <!-- Battery level color less than 60% -->
+    <com.tenx.support.colorpicker.ColorPickerSystemPreference
+        android:key="settings_tenx_dashboard_battery_level_color_sixty"
+        tenx:position="middle"
+        android:title="@string/settings_tenx_dashboard_battery_bar_level_color_sixty"
+        android:defaultValue="0xff0000FF"
+        android:dependency="settings_tenx_dashboard_battery_level_color" />
+
+    <!-- Battery level color less than 40% -->
+    <com.tenx.support.colorpicker.ColorPickerSystemPreference
+        android:key="settings_tenx_dashboard_battery_level_color_fourty"
+        tenx:position="middle"
+        android:title="@string/settings_tenx_dashboard_battery_bar_level_color_fourty"
+        android:defaultValue="0xffFFEA00"
+        android:dependency="settings_tenx_dashboard_battery_level_color" />
+
+    <!-- Battery level color less than 20% -->
+    <com.tenx.support.colorpicker.ColorPickerSystemPreference
+        android:key="settings_tenx_dashboard_battery_level_color_twenty"
+        tenx:position="bottom"
+        android:title="@string/settings_tenx_dashboard_battery_bar_level_color_twenty"
+        android:defaultValue="0xffEE4B2B"
+        android:dependency="settings_tenx_dashboard_battery_level_color" />
 </PreferenceScreen>
