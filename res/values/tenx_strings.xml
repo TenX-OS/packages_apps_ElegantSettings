@@ -933,6 +933,7 @@
     <string name="settings_tenx_dashboard_battery_bar_level_color_sixty">Less than 60%</string>
     <string name="settings_tenx_dashboard_battery_bar_level_color_fourty">Less than 40%</string>
     <string name="settings_tenx_dashboard_battery_bar_level_color_twenty">Less than 20%</string>
+    <string name="settings_tenx_dashboard_battery_bar_level_color_alpha_title">Alpha (Level color)</string>
 
     <!-- Progressbar styles -->
     <string name="theme_customization_progressbar_title">Progressbar</string>

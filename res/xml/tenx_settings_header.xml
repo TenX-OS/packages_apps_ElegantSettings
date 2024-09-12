@@ -136,8 +136,19 @@
     <!-- Battery level color less than 20% -->
     <com.tenx.support.colorpicker.ColorPickerSystemPreference
         android:key="settings_tenx_dashboard_battery_level_color_twenty"
-        tenx:position="bottom"
+        tenx:position="middle"
         android:title="@string/settings_tenx_dashboard_battery_bar_level_color_twenty"
         android:defaultValue="0xffEE4B2B"
+        android:dependency="settings_tenx_dashboard_battery_level_color" />
+
+    <!-- Battery level color alpha -->
+    <com.tenx.support.preferences.SystemSettingSeekBarPreference
+        android:key="settings_tenx_dashboard_battery_level_color_alpha"
+        tenx:position="middle"
+        android:title="@string/settings_tenx_dashboard_battery_bar_level_color_alpha_title"
+        android:max="255"
+        android:min="1"
+        settings:interval="1"
+        android:defaultValue="255"
         android:dependency="settings_tenx_dashboard_battery_level_color" />
 </PreferenceScreen>
