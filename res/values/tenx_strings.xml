@@ -997,4 +997,8 @@
     <!-- Navbar styles -->
     <string name="theme_customization_navbar_title">Navbar style</string>
     <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
+
+    <!-- Settings cards -->
+    <string name="settings_dashboard_cards_show_title">Cards</string>
+    <string name="settings_dashboard_cards_show_summary">Add or remove card from settings dashboard</string>
 </resources>
