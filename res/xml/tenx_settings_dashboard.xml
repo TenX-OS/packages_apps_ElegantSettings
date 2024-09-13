@@ -70,7 +70,6 @@
 
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:defaultValue="false"
-        android:dependency="settings_dashboard_background_shown"
         android:key="settings_dashboard_background_color"
         android:summary="@string/settings_dashboard_background_random_color_summary"
         android:title="@string/settings_dashboard_background_random_color_title"
@@ -78,7 +77,6 @@
 
     <com.tenx.support.preferences.SystemSettingListPreference
         android:defaultValue="0"
-        android:dependency="settings_dashboard_background_shown"
         android:entries="@array/settings_dashboard_background_arrow_entries"
         android:entryValues="@array/settings_dashboard_background_arrow_values"
         android:key="settings_dashboard_background_arrow"
@@ -87,7 +85,6 @@
 
     <com.tenx.support.preferences.SystemSettingListPreference
         android:defaultValue="0"
-        android:dependency="settings_dashboard_background_shown"
         android:entries="@array/settings_dashboard_arrow_color_entries"
         android:entryValues="@array/settings_dashboard_arrow_color_values"
         android:key="settings_dashboard_arrow_color"
@@ -96,7 +93,6 @@
 
     <com.tenx.support.preferences.SystemSettingSeekBarPreference
         android:defaultValue="5"
-        android:dependency="settings_dashboard_background_shown"
         android:key="settings_dashboard_background_stroke_width"
         android:max="15"
         android:title="@string/settings_dashboard_background_stroke_width_title"
@@ -106,7 +102,6 @@
 
     <com.tenx.support.preferences.SystemSettingListPreference
         android:defaultValue="0"
-        android:dependency="settings_dashboard_background_shown"
         android:entries="@array/settings_icon_color_entries"
         android:entryValues="@array/settings_icon_color_values"
         android:key="settings_dashboard_icon_color"
@@ -115,7 +110,6 @@
 
     <com.tenx.support.preferences.SystemSettingListPreference
         android:defaultValue="0"
-        android:dependency="settings_dashboard_background_shown"
         android:entries="@array/settings_styles_color_entries"
         android:entryValues="@array/settings_styles_color_values"
         android:key="settings_dashboard_icon_styles"

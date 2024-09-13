@@ -144,7 +144,7 @@
     <!-- Battery level color alpha -->
     <com.tenx.support.preferences.SystemSettingSeekBarPreference
         android:key="settings_tenx_dashboard_battery_level_color_alpha"
-        tenx:position="middle"
+        tenx:position="bottom"
         android:title="@string/settings_tenx_dashboard_battery_bar_level_color_alpha_title"
         android:max="255"
         android:min="1"
