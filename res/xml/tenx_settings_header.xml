@@ -28,14 +28,12 @@
         android:defaultValue="false" />
 
     <!-- Header images -->
-    <com.tenx.support.preferences.SystemSettingListPreference
-        android:key="settings_tenx_dashboard_background"
+    <com.tenx.support.preferences.TenXPreference
+        android:key="settings_tenx_dashboard_background_preference"
         tenx:position="middle"
         android:title="@string/settings_tenx_dashboard_background_title"
-        android:entries="@array/dashboard_background_entries"
-        android:entryValues="@array/dashboard_background_values"
-        android:summary="%s"
-        android:defaultValue="0"
+        android:summary="@string/settings_tenx_dashboard_background_summary"
+        android:fragment="com.tenx.settings.fragments.dashboard.SettingsHeaderBackground"
         android:dependency="settings_tenx_dashboard_enabled" />
 
     <!-- Image blur radius -->

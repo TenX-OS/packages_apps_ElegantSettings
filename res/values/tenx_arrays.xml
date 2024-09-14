@@ -923,44 +923,6 @@
     </string-array>
 
     <!-- Settings TenX dashboard -->
-    <string-array name="dashboard_background_entries" translatable="false">
-        <item>@string/settings_tenx_dashboard_background_0</item>
-        <item>@string/settings_tenx_dashboard_background_1</item>
-        <item>@string/settings_tenx_dashboard_background_2</item>
-        <item>@string/settings_tenx_dashboard_background_3</item>
-        <item>@string/settings_tenx_dashboard_background_4</item>
-        <item>@string/settings_tenx_dashboard_background_5</item>
-        <item>@string/settings_tenx_dashboard_background_6</item>
-        <item>@string/settings_tenx_dashboard_background_7</item>
-        <item>@string/settings_tenx_dashboard_background_8</item>
-        <item>@string/settings_tenx_dashboard_background_9</item>
-        <item>@string/settings_tenx_dashboard_background_10</item>
-        <item>@string/settings_tenx_dashboard_background_11</item>
-        <item>@string/settings_tenx_dashboard_background_12</item>
-        <item>@string/settings_tenx_dashboard_background_13</item>
-        <item>@string/settings_tenx_dashboard_background_14</item>
-        <item>@string/settings_tenx_dashboard_background_15</item>
-    </string-array>
-
-    <string-array name="dashboard_background_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-    </string-array>
-
     <string-array name="weather_type_entries" translatable="false">
         <item>@string/weather_text_only</item>
         <item>@string/weather_city_temperature</item>
