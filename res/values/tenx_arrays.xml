@@ -983,4 +983,19 @@
         <item>0</item>
         <item>1</item>
     </string-array>
+
+    <!-- TenX shade type -->
+    <string-array name="tenx_shade_type_entries" translatable="false">
+        <item>@string/tenx_shade_type_default</item>
+        <item>@string/tenx_shade_type_accurate</item>
+        <item>@string/tenx_shade_type_gradient</item>
+        <item>@string/tenx_shade_type_accurate_gradient</item>
+    </string-array>
+
+    <string-array name="tenx_shade_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

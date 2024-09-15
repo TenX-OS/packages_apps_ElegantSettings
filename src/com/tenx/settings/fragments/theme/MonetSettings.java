@@ -16,6 +16,7 @@
 package com.tenx.settings.fragments.theme;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -27,6 +28,8 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.tenx.ThemeUtils;
+
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -82,6 +85,7 @@ public class MonetSettings extends DashboardFragment implements
     private static final String PREF_TINT_BACKGROUND = "tint_background";
     private static final String PREF_SECONDARY_COLOR = "secondary_color";
     private static final String PREF_MONET_ACCURATE_SHADE = "monet_accurate_shade";
+    private static final String PREF_TENX_SHADE_TYPE = "tenx_shade_type";
 
     private SystemSettingListPreference mThemeStylePref;
     private SystemSettingListPreference mColorSourcePref;
@@ -93,6 +97,9 @@ public class MonetSettings extends DashboardFragment implements
     private SystemSettingSwitchPreference mTintBackgroundPref;
     private ColorPickerPreference mSecondaryColor;
     private SystemSettingSwitchPreference mMonetAccurateShade;
+    private SystemSettingListPreference mTenXShadeType;
+
+    private static ThemeUtils mThemeUtils;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -113,6 +120,7 @@ public class MonetSettings extends DashboardFragment implements
         mTintBackgroundPref = findPreference(PREF_TINT_BACKGROUND);
         mSecondaryColor = findPreference(PREF_SECONDARY_COLOR);
         mMonetAccurateShade = findPreference(PREF_MONET_ACCURATE_SHADE);
+        mTenXShadeType = findPreference(PREF_TENX_SHADE_TYPE);
 
         updatePreferences();
 
@@ -125,6 +133,9 @@ public class MonetSettings extends DashboardFragment implements
         mChromaPref.setOnPreferenceChangeListener(this);
         mTintBackgroundPref.setOnPreferenceChangeListener(this);
         mSecondaryColor.setOnPreferenceChangeListener(this);
+        mTenXShadeType.setOnPreferenceChangeListener(this);
+
+        mThemeUtils = new ThemeUtils(getActivity());
     }
 
     @Override
@@ -134,6 +145,7 @@ public class MonetSettings extends DashboardFragment implements
     }
 
     private void updatePreferences() {
+        final ContentResolver resolver = getActivity().getContentResolver();
         final String overlayPackageJson = Settings.Secure.getStringForUser(
                 getActivity().getContentResolver(),
                 Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES,
@@ -243,6 +255,12 @@ public class MonetSettings extends DashboardFragment implements
         } else if (preference == mSecondaryColor) {
             int value = (Integer) newValue;
             setSecondaryColor(value);
+            return true;
+        } else if (preference == mTenXShadeType) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.TENX_SHADE_TYPE, value, UserHandle.USER_CURRENT);
+            updateTenXShadeType(getActivity());
             return true;
         }
         return false;
@@ -372,6 +390,42 @@ public class MonetSettings extends DashboardFragment implements
             else object.remove(OVERLAY_SECONDARY_COLOR);
             putSettingsJson(object);
         } catch (JSONException | IllegalArgumentException ignored) {}
+    }
+
+    private void updateTenXShadeType(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+
+        int tenxShadeType = Settings.System.getIntForUser(resolver,
+                Settings.System.TENX_SHADE_TYPE, 0, UserHandle.USER_CURRENT);
+
+        String tenxShadeTypeCategory = "android.theme.customization.tenx_shade_type";
+        String overlayThemeTarget = "android";
+        String overlayThemePackage = "android";
+
+        switch (tenxShadeType) {
+            case 1:
+                overlayThemePackage = "com.tenx.shade_type.accurate";
+                break;
+            case 2:
+                overlayThemePackage = "com.tenx.shade_type.gradient";
+                break;
+            case 3:
+                overlayThemePackage = "com.tenx.shade_type.accurate_gradient";
+                break;
+            default:
+              break;
+        }
+
+        if (mThemeUtils == null) {
+            mThemeUtils = new ThemeUtils(context);
+        }
+
+        // Reset all overlays before applying
+        mThemeUtils.setOverlayEnabled(tenxShadeTypeCategory, overlayThemeTarget, overlayThemeTarget);
+
+        if (tenxShadeType > 0) {
+            mThemeUtils.setOverlayEnabled(tenxShadeTypeCategory, overlayThemePackage, overlayThemeTarget);
+        }
     }
 
     @Override

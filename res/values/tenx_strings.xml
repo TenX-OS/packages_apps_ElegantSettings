@@ -591,9 +591,12 @@
     <string name="qs_tile_ui_style_a11_square">Square tiles</string>
     <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
 
-    <!-- Monet accurate shade -->
-    <string name="monet_accurate_shade_title">Accurate shade</string>
-    <string name="monet_accurate_shade_summary">Get close to the applied colors on the system</string>
+    <!-- TenX shade type -->
+    <string name="tenx_shade_type_title">Shade type</string>
+    <string name="tenx_shade_type_default">Default</string>
+    <string name="tenx_shade_type_accurate">Accurate</string>
+    <string name="tenx_shade_type_gradient">Gradient</string>
+    <string name="tenx_shade_type_accurate_gradient">Accurate with gradient</string>
 
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Font style</string>

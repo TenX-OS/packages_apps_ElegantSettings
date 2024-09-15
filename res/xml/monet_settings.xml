@@ -24,12 +24,14 @@
         android:entryValues="@array/theme_style_values"
         android:defaultValue="0" />
 
-    <com.tenx.support.preferences.SystemSettingSwitchPreference
-        android:key="monet_accurate_shade"
-        android:title="@string/monet_accurate_shade_title"
+    <com.tenx.support.preferences.SystemSettingListPreference
+        android:key="tenx_shade_type"
+        android:title="@string/tenx_shade_type_title"
         tenx:position="middle"
-        android:summary="@string/monet_accurate_shade_summary"
-        android:defaultValue="false" />
+        android:entries="@array/tenx_shade_type_entries"
+        android:entryValues="@array/tenx_shade_type_values"
+        android:summary="%s"
+        android:defaultValue="0" />
 
     <com.tenx.support.preferences.SystemSettingListPreference
         android:key="color_source"
