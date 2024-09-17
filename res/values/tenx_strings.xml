@@ -1024,4 +1024,8 @@
     <string name="keyguard_batterybar_white">Default white</string>
     <string name="keyguard_batterybar_accent">Accent Color</string>
     <string name="keyguard_batterybar_custom">Custom</string>
+
+    <!-- Clock size -->
+    <string name="statusbar_clock_size_title">Size (Statusbar)</string>
+    <string name="qs_clock_size_title">Size (QS)</string>
 </resources>
