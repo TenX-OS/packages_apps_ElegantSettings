@@ -1013,4 +1013,10 @@
     <string name="lockscreen_maxnotif_title">Notification count</string>
     <string name="lockscreen_maxnotif_summary">Enable adjustment of max lockscreen notifications</string>
     <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
+
+    <!-- Ambient battery bar settings -->
+    <string name="keyguard_show_battery_title">Battery bar when charging</string>
+    <string name="keyguard_show_battery_summary">Show a battery bar on the ambient display when charging</string>
+    <string name="keyguard_show_battery_always_title">Always show battery bar</string>
+    <string name="keyguard_show_battery_always_summary">Always show a battery bar on the ambient display</string>
 </resources>

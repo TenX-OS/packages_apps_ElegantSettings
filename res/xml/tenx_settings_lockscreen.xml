@@ -121,10 +121,27 @@
         <!-- Charging animation -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_charging_animation"
-            tenx:position="bottom"
+            tenx:position="middle"
             android:title="@string/keyguard_charging_animation_title"
             android:summary="@string/keyguard_charging_animation_summary"
             android:defaultValue="true" />
+
+        <!-- Keyguard battery bar -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="sysui_keyguard_show_battery_bar"
+            tenx:position="middle"
+            android:title="@string/keyguard_show_battery_title"
+            android:summary="@string/keyguard_show_battery_summary"
+            android:defaultValue="false" />
+
+        <!-- Keyguard battery bar show always -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="sysui_keyguard_show_battery_bar_always"
+            tenx:position="bottom"
+            android:title="@string/keyguard_show_battery_always_title"
+            android:summary="@string/keyguard_show_battery_always_summary"
+            android:dependency="sysui_keyguard_show_battery_bar"
+            android:defaultValue="false" />
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
