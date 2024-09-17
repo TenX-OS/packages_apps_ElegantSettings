@@ -1026,4 +1026,17 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+
+    <!-- Keyguard battery bar -->
+    <string-array name="keyguard_batterybar_color_source_entries" translatable="false">
+        <item>@string/keyguard_batterybar_white</item>
+        <item>@string/keyguard_batterybar_accent</item>
+        <item>@string/keyguard_batterybar_custom</item>
+    </string-array>
+
+    <string-array name="keyguard_batterybar_color_source_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>
