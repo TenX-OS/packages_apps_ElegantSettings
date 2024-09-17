@@ -64,4 +64,33 @@
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.support.preferences.TenXPreferenceCategory
+        android:key="power_menu"
+        android:title="@string/power_menu_category_title">
+
+        <!-- Powermenu transparency -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="transparent_power_menu"
+            tenx:position="top"
+            android:title="@string/power_menu_transparency"
+            android:max="100"
+            android:min="0"
+            settings:units="%"
+            android:defaultValue="100" />
+
+        <!-- Powermenu dim -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="transparent_power_dialog_dim"
+            tenx:position="bottom"
+            android:title="@string/power_menu_dialog_dim"
+            android:max="100"
+            android:min="0"
+            settings:units="%"
+            android:defaultValue="50" />
+
+    </com.tenx.support.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>
