@@ -80,6 +80,7 @@
     <string name="sound_category_title">Sound</string>
     <string name="vibration_category_title">Vibration</string>
     <string name="flashlight_category_title">Flashlight</string>
+    <string name="power_menu_category_title">Power menu</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -989,4 +990,18 @@
     <!-- Settings cards -->
     <string name="settings_dashboard_cards_show_title">Cards</string>
     <string name="settings_dashboard_cards_show_summary">Add or remove card from settings dashboard</string>
+
+    <!-- Power menu Animations  -->
+    <string name="power_menu_animation_title">Power menu</string>
+    <string name="power_menu_animation_aosp">AOSP (default)</string>
+    <string name="power_menu_animation_bottom">Bottom</string>
+    <string name="power_menu_animation_top">Top</string>
+    <string name="power_menu_animation_xylon">Fly</string>
+    <string name="power_menu_animation_slide">Slide</string>
+    <string name="power_menu_animation_turn">Turn</string>
+    <string name="power_menu_animation_fly">Glow</string>
+    <string name="power_menu_animation_card">3D</string>
+    <string name="power_menu_animation_translucent_top">Translucent (top)</string>
+    <string name="power_menu_animation_translucent_bottom">Translucent (bottom)</string>
+    <string name="power_menu_animation_rotate">Rotate</string>
 </resources>
