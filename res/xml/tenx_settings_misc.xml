@@ -23,10 +23,18 @@
         android:key="volume_panel"
         android:title="@string/misc_category_title">
 
+        <!-- Spoofing preference -->
+        <com.tenx.support.preferences.TenXPreference
+            android:key="spoof"
+            tenx:position="top"
+            android:title="@string/spoofing_title"
+            android:summary="@string/spoofing_summary"
+            android:fragment="com.tenx.settings.fragments.spoof.SpoofSettings" />
+
         <!-- Three fingers swipe screenshot -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="three_fingers_swipe"
-            tenx:position="top"
+            tenx:position="middle"
             android:title="@string/three_fingers_swipe_title"
             android:entries="@array/three_fingers_swipe_action_entries"
             android:entryValues="@array/three_fingers_swipe_action_values"
