@@ -764,19 +764,6 @@
     <string name="no_storage_restrict_title">No storage restrict</string>
     <string name="no_storage_restrict_summary">Remove the restriction when selecting folders through Storage Access Framework. Can be convenient in some cases but may lead to privacy leaks.</string>
 
-    <!-- PIF spoofing -->
-    <string name="pif_spoofing_title">Select PIF JSON File</string>
-    <string name="pif_spoofing_summary">Pick PIF JSON file to be used for spoofing play integrity</string>
-    <string name="show_pif_properties_title">Play Integrity Fix properties</string>
-    <string name="show_pif_properties_summary">Show all currently set PIF properties</string>
-    <string name="error_loading_properties">Error loading PIF properties</string>
-
-    <!-- Per-app spoofing -->
-    <string name="gameprops_title">Enable Per-app spoofing</string>
-    <string name="gameprops_summary">Enables Per-app spoofing options within the PixelProps</string>
-    <string name="gameprops_load_json_title">Select Per-app Props JSON File</string>
-    <string name="gameprops_load_json_summary">Pick Per-app JSON file to be used for spoofing games</string>
-
     <!-- Ambient music ticker location -->
     <string name="ambient_music_location">Show ambient music ticker</string>
     <string name="ambient_music_disabled">Disabled</string>

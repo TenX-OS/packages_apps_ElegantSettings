@@ -40,28 +40,6 @@
             android:summary="@string/ignore_window_secure_summary"
             android:defaultValue="false"/>
 
-        <!-- PIF spoofing -->
-        <com.tenx.support.preferences.TenXPreference
-            android:key="pif_json_file_preference"
-            tenx:position="middle"
-            android:title="@string/pif_spoofing_title"
-            android:summary="@string/pif_spoofing_summary"/>
-
-        <!-- Game props -->
-        <com.tenx.support.preferences.SystemPropertySwitchPreference
-            android:key="persist.sys.gameprops.enabled"
-            tenx:position="middle"
-            android:title="@string/gameprops_title"
-            android:summary="@string/gameprops_summary"
-            android:defaultValue="false" />
-
-        <!-- Game props spoofing -->
-        <com.tenx.support.preferences.TenXPreference
-            android:key="game_props_json_file_preference"
-            tenx:position="middle"
-            android:title="@string/gameprops_load_json_title"
-            android:summary="@string/gameprops_load_json_summary" />
-
         <!-- No storage restriction -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="no_storage_restrict"
