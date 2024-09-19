@@ -1047,4 +1047,8 @@
     <string name="show_pif_properties_title">Play Integrity Fix properties</string>
     <string name="show_pif_properties_summary">Show all currently set PIF properties</string>
     <string name="error_loading_properties">Error loading PIF properties</string>
+
+    <!-- Lockscreen blur -->
+    <string name="lockscreen_blur_title">Background blur</string>
+    <string name="lockscreen_blur_summary">Blur lock screen background</string>
 </resources>

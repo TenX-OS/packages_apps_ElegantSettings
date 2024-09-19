@@ -240,13 +240,24 @@
         <!-- Max notification count -->
         <com.tenx.support.preferences.CustomSeekBarPreference
             android:key="lockscreen_max_notif_cofig"
-            tenx:position="bottom"
+            tenx:position="middle"
             android:title="@string/lockscreen_maxnotif_config"
             android:max="6"
             settings:min="1"
             settings:units=""
             android:persistent="false"
             android:dependency="lock_screen_custom_notif" />
+
+        <!-- Lockscreen blur -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="lockscreen_blur"
+            tenx:position="bottom"
+            android:title="@string/lockscreen_blur_title"
+            android:summary="@string/lockscreen_blur_summary"
+            android:defaultValue="0"
+            android:max="100"
+            settings:min="0"
+            settings:units="%" />
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
