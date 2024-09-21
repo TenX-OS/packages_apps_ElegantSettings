@@ -26,6 +26,13 @@
         android:defaultValue="true" />
 
     <com.tenx.support.preferences.SystemSettingSwitchPreference
+        android:key="display_settings_homepage_avatar"
+        tenx:position="middle"
+        android:title="@string/settings_homepage_avatar_display_title"
+        android:summary="@string/settings_homepage_avatar_display_summary"
+        android:defaultValue="true" />
+
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:defaultValue="false"
         android:key="settings_dashboard_background_shown"
         android:summary="@string/settings_dashboard_background_shown_summary"

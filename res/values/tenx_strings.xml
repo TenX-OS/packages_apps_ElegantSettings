@@ -1051,4 +1051,8 @@
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Background blur</string>
     <string name="lockscreen_blur_summary">Blur lock screen background</string>
+
+    <!-- Settings homepage avatar -->
+    <string name="settings_homepage_avatar_display_title">Avatar</string>
+    <string name="settings_homepage_avatar_display_summary">Display/hide avatar in settings homepage</string>
 </resources>
