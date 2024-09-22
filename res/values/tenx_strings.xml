@@ -1055,4 +1055,10 @@
     <!-- Settings homepage avatar -->
     <string name="settings_homepage_avatar_display_title">Avatar</string>
     <string name="settings_homepage_avatar_display_summary">Display/hide avatar in settings homepage</string>
+
+    <!-- Quick switch -->
+    <string name="quickswitch_launcher_title">QuickSwitch</string>
+    <string name="quickswitch_launcher_summary">Customize default homescreen app</string>
+    <string name="nothing_launcher_customizations_title">Nothing launcher customizations</string>
+    <string name="nothing_launcher_customizations_summary">Customize nothing launcher homescreen app</string>
 </resources>

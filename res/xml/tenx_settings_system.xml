@@ -110,4 +110,22 @@
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.support.preferences.TenXPreferenceCategory
+        android:key="system_misc"
+        android:title="@string/misc_category_title">
+
+        <!-- Launcher selector -->
+        <com.tenx.support.preferences.SystemPropertyListPreference
+            android:key="persist.sys.default_launcher"
+            tenx:position="full"
+            android:title="@string/quickswitch_launcher_title"
+            android:entries="@array/quickswitch_launcher_entries"
+            android:entryValues="@array/quickswitch_launcher_values"
+            android:summary="%s" />
+
+    </com.tenx.support.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>

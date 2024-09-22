@@ -36,7 +36,11 @@ import com.tenx.support.preferences.SystemSettingSwitchPreference;
 import com.tenx.support.preferences.SystemSettingSeekBarPreference;
 import com.tenx.support.preferences.TenXPreferenceCategory;
 
+import com.android.internal.util.tenx.SystemRestartUtils;
 import com.android.internal.util.tenx.Utils;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class System extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -51,10 +55,12 @@ public class System extends SettingsPreferenceFragment
     private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
     private static final String FLASHLIGHT_DND_PREF = "flashlight_on_call_ignore_dnd";
     private static final String FLASHLIGHT_RATE_PREF = "flashlight_on_call_rate";
+    private static final String QUICKSWITCH_KEY = "persist.sys.default_launcher";
 
     private SystemSettingListPreference mFlashOnCall;
     private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
     private SystemSettingSeekBarPreference mFlashOnCallRate;
+    private ListPreference quickSwitchPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +97,28 @@ public class System extends SettingsPreferenceFragment
             mFlashOnCallIgnoreDND.setEnabled(value > 1);
             mFlashOnCallRate.setEnabled(value > 0);
         }
+
+        int defaultLauncher = SystemProperties.getInt(QUICKSWITCH_KEY, 0);
+        PreferenceScreen preferenceScreen = getPreferenceScreen();
+        quickSwitchPref = findPreference(QUICKSWITCH_KEY);
+        quickSwitchPref.setOnPreferenceChangeListener(this);
+        Context context = getContext();
+        List<String> launcherEntries = new ArrayList<>();
+        List<String> launcherValues = new ArrayList<>();
+
+        if (SystemProperties.getInt("persist.sys.quickswitch_pixel_shipped", 0) != 0) {
+            launcherEntries.add("Pixel Launcher");
+            launcherValues.add("0");
+        }
+
+        if (SystemProperties.getInt("persist.sys.quickswitch_lawnchair_shipped", 0) != 0) {
+            launcherEntries.add("Lawnchair");
+            launcherValues.add("1");
+        }
+
+        quickSwitchPref.setEntries(launcherEntries.toArray(new CharSequence[launcherEntries.size()]));
+        quickSwitchPref.setEntryValues(launcherValues.toArray(new CharSequence[launcherValues.size()]));
+        quickSwitchPref.setValue(String.valueOf(defaultLauncher));
     }
 
     @Override
@@ -99,6 +127,9 @@ public class System extends SettingsPreferenceFragment
             int value = Integer.parseInt((String) newValue);
             mFlashOnCallIgnoreDND.setEnabled(value > 1);
             mFlashOnCallRate.setEnabled(value > 0);
+            return true;
+        } else if (preference == quickSwitchPref) {
+            SystemRestartUtils.showSystemRestartDialog(getContext());
             return true;
         }
         return false;
