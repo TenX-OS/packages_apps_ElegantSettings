@@ -26,6 +26,13 @@
         android:defaultValue="true" />
 
     <com.tenx.support.preferences.SystemSettingSwitchPreference
+	android:key="show_contextual_dashboard_messages"
+	tenx:position="middle"
+        android:title="@string/enable_contextual_dashboard_title"
+        android:summary="@string/enable_contextual_dashboard_summary"
+        android:defaultValue="false" />
+
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="display_settings_homepage_avatar"
         tenx:position="middle"
         android:title="@string/settings_homepage_avatar_display_title"
