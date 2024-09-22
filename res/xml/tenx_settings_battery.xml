@@ -47,6 +47,14 @@
             android:summary="@string/sensor_block_summary"
             android:fragment="com.tenx.settings.fragments.battery.SensorBlock" />
 
+        <!-- Background process killer -->
+	<com.tenx.support.preferences.SystemSettingSwitchPreference
+	    android:key="custom_idle_manager"
+	    tenx:position="middle"
+            android:title="@string/idle_manager_title"
+            android:summary="@string/idle_manager_summary"
+            android:defaultValue="false" />
+
         <!-- Smart pixels -->
         <com.tenx.support.preferences.TenXPreference
             android:key="smart_pixels"
