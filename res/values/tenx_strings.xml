@@ -1074,4 +1074,7 @@
     <!-- Idle Manager -->
     <string name="idle_manager_title">Idle Manager</string>
     <string name="idle_manager_summary">Stop all non-essential background processes when the device is idle</string>
+
+    <!-- QS fling animation -->
+    <string name="fling_animation_duration_title">Fling animation</string>
 </resources>

@@ -46,11 +46,22 @@
         <!-- Animation interpolator -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="qs_tile_animation_interpolator"
-            tenx:position="bottom"
+            tenx:position="middle"
             android:title="@string/quick_settings_tile_animation_interpolator_title"
             android:entries="@array/quick_settings_tile_animation_interpolator_entries"
             android:entryValues="@array/quick_settings_tile_animation_interpolator_values"
             android:defaultValue="0" />
+
+        <!-- QS fling animation duration -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+	    android:key="fling_animation_duration"
+            tenx:position="bottom"
+            android:title="@string/fling_animation_duration_title"
+            android:defaultValue="350"
+            settings:interval="50"
+            settings:units="ms"
+            android:max="1000"
+            android:min="0" />
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
