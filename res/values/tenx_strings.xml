@@ -58,7 +58,7 @@
     <string name="status_bar_gestures_category_title">Gestures</string>
     <string name="quick_settings_lock_screen_category_title">Lock screen</string>
     <string name="quick_settings_panel_category_title">Panel</string>
-    <string name="quick_settings_tiles_animations_category_title">Tiles</string>
+    <string name="quick_settings_animations_category_title">Quick settings</string>
     <string name="quick_settings_tiles_category_title">Tiles</string>
     <string name="navbar_category_title">Navbar</string>
     <string name="theme_category_title">Theme</string>

@@ -21,7 +21,7 @@
 
     <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="quick_settings_animations_category"
-        android:title="@string/quick_settings_tiles_animations_category_title">
+        android:title="@string/quick_settings_animations_category_title">
 
         <!-- Tiles animation style -->
         <com.tenx.support.preferences.SystemSettingListPreference
