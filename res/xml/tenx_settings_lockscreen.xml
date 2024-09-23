@@ -229,6 +229,14 @@
             android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />
 
+        <!-- Keyguard user switcher -->
+	<com.tenx.support.preferences.SystemSettingSwitchPreference
+	    android:key="kg_user_switcher_enabled"
+	    tenx:position="middle"
+            android:title="@string/kg_user_switcher_enabled_title"
+            android:summary="@string/kg_user_switcher_enabled_summary"
+            android:defaultValue="false" />
+
         <!-- Enable notification count -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lock_screen_custom_notif"

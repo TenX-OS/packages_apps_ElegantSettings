@@ -29,6 +29,7 @@ import android.text.TextUtils;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.tenx.OmniJawsClient;
+import com.android.internal.util.tenx.SystemRestartUtils;
 import com.android.internal.util.tenx.Utils;
 
 import com.android.settings.R;
@@ -53,6 +54,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_FINGERPRINT_CATEGORY = "fingerprint";
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_COLOR_SOURCE = "sysui_keyguard_battery_bar_color_source";
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_CUSTOM_COLOR = "sysui_keyguard_battery_bar_custom_color";
+    private static final String KEY_KG_USER_SWITCHER= "kg_user_switcher_enabled";
 
     private SystemSettingSwitchPreference mWeatherEnabled;
     private TenXPreference mUdfpsAnimations;
@@ -60,6 +62,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SecureSettingSwitchPreference mScreenOffUdfps;
     private SystemSettingListPreference mBarColorSource;
     private ColorPickerPreference mBarCustomColor;
+    private Preference mUserSwitcher;
 
     private OmniJawsClient mWeatherClient;
 
@@ -79,6 +82,8 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mUdfpsAnimations = (TenXPreference) findPreference(KEY_UDFPS_ANIMATIONS);
         mUdfpsIcons = (TenXPreference) findPreference(KEY_UDFPS_ICONS);
         mScreenOffUdfps = (SecureSettingSwitchPreference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
+        mUserSwitcher = (Preference) findPreference(KEY_KG_USER_SWITCHER);
+        mUserSwitcher.setOnPreferenceChangeListener(this);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             fingerprintCategory.removePreference(mUdfpsAnimations);
@@ -137,6 +142,9 @@ public class LockScreen extends SettingsPreferenceFragment implements
            Settings.System.putInt(getContentResolver(),
                    Settings.System.CUSTOM_KEYGUARD_BATTERY_BAR_CUSTOM_COLOR, intHex);
            return true;
+       } else if (preference == mUserSwitcher) {
+            SystemRestartUtils.showSystemUIRestartDialog(getContext());
+            return true;
        }
        return false;
     }
