@@ -144,6 +144,7 @@
         <item>@string/status_bar_battery_style_icon_landscape</item> 
         <item>@string/status_bar_battery_style_icon_landscape_ios15</item>
         <item>@string/status_bar_battery_style_icon_landscape_ios16</item>
+	<item>@string/status_bar_battery_style_land_l</item>
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
@@ -157,6 +158,7 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+	<item>10</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
