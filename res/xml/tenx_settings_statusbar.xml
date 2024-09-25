@@ -183,6 +183,13 @@
             tenx:position="middle"
             android:title="@string/status_bar_colored_icons_title"
             android:summary="@string/status_bar_colored_icons_summary"
+	    android:defaultValue="false" />
+
+	<com.tenx.support.preferences.SystemSettingSwitchPreference
+	    android:key="qs_colored_icons"
+	    tenx:position="middle"
+            android:title="@string/qs_colored_icons_title"
+            android:summary="@string/qs_colored_icons_summary"
             android:defaultValue="false" />
 
         <!-- Notification counter -->
