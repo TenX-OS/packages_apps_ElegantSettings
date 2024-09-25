@@ -88,6 +88,25 @@
         android:layout="@layout/tenx_divider" />
 
     <com.tenx.support.preferences.TenXPreferenceCategory
+        android:key="toast_animations_category"
+	android:title="@string/toast_category_title">
+
+	<com.tenx.support.preferences.SystemSettingListPreference
+	    android:key="toast_animation"
+	    tenx:position="full"
+            android:title="@string/toast_animation_title"
+            android:dialogTitle="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
+            android:summary="%s"
+	    android:defaultValue="1" />
+
+    </com.tenx.support.preferences.TenXPreferenceCategory>
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="power_menu_animations_category"
         android:title="@string/power_menu_category_title">
 
