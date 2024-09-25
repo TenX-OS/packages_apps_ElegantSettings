@@ -41,10 +41,8 @@ public class Misc extends SettingsPreferenceFragment
 
     public static final String TAG = "Misc";
 
-    private static final String KEY_POCKET_JUDGE = "pocket_judge";
     private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
 
-    private SystemSettingSwitchPreference mPocketJudge;
     private ListPreference mThreeFingersSwipeAction;
 
     @Override
@@ -54,13 +52,6 @@ public class Misc extends SettingsPreferenceFragment
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
-
-        mPocketJudge = (SystemSettingSwitchPreference) findPreference(KEY_POCKET_JUDGE);
-
-        boolean mPocketJudgeSupported = res.getBoolean(
-                com.android.internal.R.bool.config_pocketModeSupported);
-        if (!mPocketJudgeSupported)
-            prefScreen.removePreference(mPocketJudge);
 
         Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
                 LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
