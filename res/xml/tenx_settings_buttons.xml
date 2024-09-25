@@ -42,10 +42,17 @@
         android:key="volume_panel"
         android:title="@string/volume_category_title">
 
+	<com.tenx.support.preferences.SecureSettingSwitchPreference
+	    android:key="volume_show_media_button"
+	    tenx:position="top"
+            android:title="@string/volume_show_media_button_title"
+            android:summary="@string/volume_show_media_button_summary"
+            android:defaultValue="true"/>
+
         <!-- Volumen panel text -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="VOLUME_TEXTVIEW"
-            tenx:position="top"
+            tenx:position="middle"
             android:title="@string/volume_persen_switch_title"
             android:summary="@string/volume_persen_switch_summary"
             android:defaultValue="false" />

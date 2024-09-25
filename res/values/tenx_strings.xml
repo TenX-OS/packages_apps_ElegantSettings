@@ -1083,4 +1083,8 @@
     <!-- Colored QS notification icons -->
     <string name="qs_colored_icons_title">Colored QS notification icons</string>
     <string name="qs_colored_icons_summary">Show colored app icon instead of monochrome icons</string>
+
+    <!-- Volume Media Button -->
+    <string name="volume_show_media_button_title">Volume media button</string>
+    <string name="volume_show_media_button_summary">Show media output switcher button into volume dialog</string>
 </resources>
