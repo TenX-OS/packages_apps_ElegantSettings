@@ -1108,4 +1108,8 @@
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
     <string name="toast_rotate_animation">Rotate</string>
+
+    <!-- QS split shade -->
+    <string name="qs_split_shade_title">Split Shade</string>
+    <string name="qs_split_shade_summary">Split QS layout in landscape mode</string>
 </resources>

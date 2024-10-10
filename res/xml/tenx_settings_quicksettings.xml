@@ -106,6 +106,13 @@
             android:summary="@string/qs_dual_tone_summary"
             android:defaultValue="true" />
 
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_split_shade"
+            tenx:position="middle"
+            android:title="@string/qs_split_shade_title"
+            android:summary="@string/qs_split_shade_summary"
+            android:defaultValue="false" />
+
         <!-- Floating clear all -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"

@@ -44,6 +44,10 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String KEY_BATTERY_STYLE = "qs_battery_style";
     private static final String KEY_BATTERY_PERCENT = "qs_show_battery_percent";
     private static final String KEY_QS_UI_STYLE  = "qs_tile_ui_style";
+    private static final String KEY_QS_SPLIT_SHADE = "qs_split_shade";
+    private static final String QS_SPLIT_SHADE_LAYOUT_CTG = "android.theme.customization.qs_landscape_layout";
+    private static final String QS_SPLIT_SHADE_LAYOUT_PKG = "com.android.systemui.qs.landscape.split_shade_layout";
+    private static final String QS_SPLIT_SHADE_LAYOUT_TARGET = "com.android.systemui";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -52,6 +56,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mQsUI;
+    private SystemSettingSwitchPreference mSplitShade;
 
     private static ThemeUtils mThemeUtils;
 
@@ -79,6 +84,11 @@ public class QuickSettings extends SettingsPreferenceFragment
         String isA11Style = Integer.toString(Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT));
 
+        mSplitShade = findPreference(KEY_QS_SPLIT_SHADE);
+        boolean ssEnabled = isSplitShadeEnabled();
+        mSplitShade.setChecked(ssEnabled);
+        mSplitShade.setOnPreferenceChangeListener(this);
+
         mQsUI = (SystemSettingListPreference) findPreference(KEY_QS_UI_STYLE);
         int index = mQsUI.findIndexOfValue(isA11Style);
         mQsUI.setValue(isA11Style);
@@ -104,8 +114,21 @@ public class QuickSettings extends SettingsPreferenceFragment
                     Settings.System.QS_TILE_UI_STYLE, value, UserHandle.USER_CURRENT);
             updateQsStyle(getActivity());
             return true;
+        } else if (preference == mSplitShade) {
+            updateSplitShadeState(((Boolean) newValue).booleanValue());
+            return true;
         }
         return false;
+    }
+
+    private boolean isSplitShadeEnabled() {
+        return mThemeUtils.isOverlayEnabled(QS_SPLIT_SHADE_LAYOUT_PKG);
+    }
+    private void updateSplitShadeState(boolean enable) {
+        mThemeUtils.setOverlayEnabled(
+                QS_SPLIT_SHADE_LAYOUT_CTG,
+                enable ? QS_SPLIT_SHADE_LAYOUT_PKG : QS_SPLIT_SHADE_LAYOUT_TARGET,
+                QS_SPLIT_SHADE_LAYOUT_TARGET);
     }
 
     private static void updateQsStyle(Context context) {
