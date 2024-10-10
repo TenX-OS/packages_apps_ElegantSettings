@@ -196,6 +196,22 @@
             android:summary="@string/udfps_icon_picker_summary"
             android:fragment="com.tenx.settings.fragments.lockscreen.UdfpsIconPicker" />
 
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="custom_fp_icon_enabled"
+            tenx:position="middle"
+            android:title="@string/custom_fp_icon_title"
+            android:summary="@string/custom_fp_icon_summary"
+            android:defaultValue="false" />
+
+        <com.tenx.support.preferences.TenXPreference
+            android:key="custom_fp_file_select"
+            tenx:position="middle"
+            android:title="@string/custom_fp_select_title"
+            android:summary="@string/custom_fp_select_summary"
+            android:dependency="custom_fp_icon_enabled"
+            android:persistent="false" >
+        </com.tenx.support.preferences.TenXPreference>
+
         <!-- UDFPS animations picker -->
         <com.tenx.support.preferences.TenXPreference
             android:key="udfps_recognizing_animation_preview"

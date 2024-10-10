@@ -20,9 +20,17 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.os.ParcelFileDescriptor;
 import android.provider.Settings;
 import androidx.preference.*;
 import android.text.TextUtils;
@@ -44,6 +52,11 @@ import com.tenx.support.preferences.SystemSettingSwitchPreference;
 import com.tenx.support.preferences.TenXPreference;
 import com.tenx.support.colorpicker.ColorPickerPreference;
 
+import java.io.FileDescriptor;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -55,6 +68,9 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_COLOR_SOURCE = "sysui_keyguard_battery_bar_color_source";
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_CUSTOM_COLOR = "sysui_keyguard_battery_bar_custom_color";
     private static final String KEY_KG_USER_SWITCHER= "kg_user_switcher_enabled";
+    private static final String CUSTOM_FOD_ICON_KEY = "custom_fp_icon_enabled";
+    private static final String CUSTOM_FP_FILE_SELECT = "custom_fp_file_select";
+    private static final int REQUEST_PICK_IMAGE = 0;
 
     private SystemSettingSwitchPreference mWeatherEnabled;
     private TenXPreference mUdfpsAnimations;
@@ -63,6 +79,8 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SystemSettingListPreference mBarColorSource;
     private ColorPickerPreference mBarCustomColor;
     private Preference mUserSwitcher;
+    private TenXPreference mCustomFPImage;
+    private SystemSettingSwitchPreference mCustomFodIcon;
 
     private OmniJawsClient mWeatherClient;
 
@@ -85,10 +103,28 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mUserSwitcher = (Preference) findPreference(KEY_KG_USER_SWITCHER);
         mUserSwitcher.setOnPreferenceChangeListener(this);
 
+        mCustomFPImage = findPreference(CUSTOM_FP_FILE_SELECT);
+        final String customIconURI = Settings.System.getString(getContext().getContentResolver(),
+               Settings.System.OMNI_CUSTOM_FP_ICON);
+        if (!TextUtils.isEmpty(customIconURI)) {
+            setPickerIcon(customIconURI);
+        }
+        mCustomFodIcon = (SystemSettingSwitchPreference) findPreference(CUSTOM_FOD_ICON_KEY);
+        boolean val = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.OMNI_CUSTOM_FP_ICON_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
+        mCustomFodIcon.setOnPreferenceChangeListener(this);
+        if (val) {
+            mUdfpsIcons.setEnabled(false);
+        } else {
+            mUdfpsIcons.setEnabled(true);
+        }
+
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             fingerprintCategory.removePreference(mUdfpsAnimations);
             fingerprintCategory.removePreference(mUdfpsIcons);
             fingerprintCategory.removePreference(mScreenOffUdfps);
+            fingerprintCategory.removePreference(mCustomFPImage);
+            fingerprintCategory.removePreference(mCustomFodIcon);
         } else {
             if (!Utils.isPackageInstalled(getContext(), "com.tenx.udfps.animations")) {
                 fingerprintCategory.removePreference(mUdfpsAnimations);
@@ -121,6 +157,17 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mBarCustomColor.setNewPreviewColor(batteryBarColor);
     }
 
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mCustomFPImage) {
+            Intent intent = new Intent(Intent.ACTION_PICK);
+            intent.setType("image/*");
+            startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mBarColorSource) {
             int value = Integer.valueOf((String) newValue);
@@ -145,8 +192,47 @@ public class LockScreen extends SettingsPreferenceFragment implements
        } else if (preference == mUserSwitcher) {
             SystemRestartUtils.showSystemUIRestartDialog(getContext());
             return true;
+        } else if (preference == mCustomFodIcon) {
+            boolean val = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.OMNI_CUSTOM_FP_ICON_ENABLED, val ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            if (val) {
+                mUdfpsIcons.setEnabled(false);
+            } else {
+                mUdfpsIcons.setEnabled(true);
+            }
+            return true;
        }
        return false;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent result) {
+       if (requestCode == REQUEST_PICK_IMAGE && resultCode == Activity.RESULT_OK) {
+           Uri uri = null;
+           if (result != null) {
+               uri = result.getData();
+               setPickerIcon(uri.toString());
+               Settings.System.putString(getContentResolver(), Settings.System.OMNI_CUSTOM_FP_ICON,
+                   uri.toString());
+            }
+        } else if (requestCode == REQUEST_PICK_IMAGE && resultCode == Activity.RESULT_CANCELED) {
+            mCustomFPImage.setIcon(new ColorDrawable(Color.TRANSPARENT));
+            Settings.System.putString(getContentResolver(), Settings.System.OMNI_CUSTOM_FP_ICON, "");
+        }
+    }
+    private void setPickerIcon(String uri) {
+        try {
+                ParcelFileDescriptor parcelFileDescriptor =
+                    getContext().getContentResolver().openFileDescriptor(Uri.parse(uri), "r");
+                FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+                Bitmap image = BitmapFactory.decodeFileDescriptor(fileDescriptor);
+                parcelFileDescriptor.close();
+                Drawable d = new BitmapDrawable(getResources(), image);
+                mCustomFPImage.setIcon(d);
+            }
+            catch (Exception e) {}
     }
 
     private void updateWeatherSettings() {
