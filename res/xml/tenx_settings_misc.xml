@@ -98,7 +98,7 @@
 
         <!-- Floating rotation button -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="enable_floating_rotation_button"
+            android:key="enable_rotation_button"
             tenx:position="middle"
             android:title="@string/floating_rotation_button_title"
             android:summary="@string/floating_rotation_button_summary"
