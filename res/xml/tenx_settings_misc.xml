@@ -107,10 +107,17 @@
         <!-- QS Media Player  -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_compact_media_player_mode"
-	    tenx:position="middle"
+	        tenx:position="middle"
             android:title="@string/qs_compact_media_player_mode_title"
             android:summary="@string/qs_compact_media_player_mode_summary"
             android:defaultValue="false"  />
+
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+        	android:key="media_controls_always_show_time"
+            tenx:position="middle"
+        	android:title="@string/media_controls_always_show_time_title"
+        	android:summary="@string/media_controls_always_show_time_summary"
+        	android:defaultValue="false" />
 
         <!-- Adaptive playback -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
