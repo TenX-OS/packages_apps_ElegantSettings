@@ -54,14 +54,21 @@
 
         <!-- QS fling animation duration -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
-	    android:key="fling_animation_duration"
-            tenx:position="bottom"
+	        android:key="fling_animation_duration"
+            tenx:position="middle"
             android:title="@string/fling_animation_duration_title"
             android:defaultValue="350"
             settings:interval="50"
             settings:units="ms"
             android:max="1000"
             android:min="0" />
+
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="show_media_squiggle_animation"
+            tenx:position="bottom"
+            android:title="@string/show_squiggle_animation_title"
+            android:summary="@string/show_squiggle_animation_summary"
+            android:defaultValue="true" />
 
     </com.tenx.support.preferences.TenXPreferenceCategory>
 
