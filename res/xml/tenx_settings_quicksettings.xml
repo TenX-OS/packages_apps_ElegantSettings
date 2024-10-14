@@ -260,13 +260,13 @@
             settings:units="dp"
             android:defaultValue="32" />
 
-        <!-- QS Bluetooth auto on -->
+        <!-- QS Bluetooth Dialog -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="qs_bt_auto_on"
+            android:key="qs_bt_show_dialog"
             tenx:position="middle"
-            android:title="@string/qs_bt_auto_on_title"
-            android:summary="@string/qs_bt_auto_on_summary"
-            android:defaultValue="false" />
+            android:title="@string/qs_bt_show_dialog_title"
+            android:summary="@string/qs_bt_show_dialog_summary"
+            android:defaultValue="true" />
 
         <!-- Legacy qstile styles -->
         <com.tenx.support.preferences.SystemSettingListPreference
